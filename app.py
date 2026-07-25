@@ -47,23 +47,17 @@ def index():
     skill_map = load_json_file("skills.json")
     factor_map = load_json_file("factors.json")
     
-    # Handle data.json upload
-    raw_data = {}
+    # Handle data.json upload and save it locally
     if request.method == "POST" and "data_file" in request.files:
         file = request.files["data_file"]
         if file and file.filename.endswith(".json"):
             try:
-                raw_data = json.load(file)
-                session["uploaded_data"] = raw_data
-            except Exception:
-                pass
-                
-    if not raw_data and "uploaded_data" in session:
-        raw_data = session["uploaded_data"]
-        
-    if not raw_data:
-        raw_data = load_json_file("data.json")
-    
+                os.makedirs(DATA_DIR, exist_ok=True)
+                file.save(os.path.join(DATA_DIR, "data.json"))
+            except Exception as e:
+                print("Error saving uploaded file:", e)
+
+    raw_data = load_json_file("data.json")
     veterans_list = raw_data if isinstance(raw_data, list) else raw_data.get("trained_chara_array", [])
 
     vet_lookup = {}
@@ -260,7 +254,6 @@ def index():
             external_title = "Top White Sparks Rental Parents Ranked vs Filtered Roster"
             url = "https://uma.moe/api/v3/search?page=0&limit=100&search_type=inheritance&max_follower_num=999&sort_by=white_count&sort_order=desc"
             
-        # API Key sent from frontend header/query or default fallback
         api_key_header = request.args.get("api_key", "")
         headers = {"accept": "application/json"}
         if api_key_header:
