@@ -40,7 +40,7 @@
                         {% if has_data_file %}
                             <span class="text-emerald-400 font-medium">● File loaded</span>
                         {% else %}
-                            <span class="text-slate-400">Nessun file selezionato</span>
+                            <span class="text-slate-400">No file selected</span>
                         {% endif %}
                     </div>
                 </div>
@@ -216,20 +216,54 @@
                 <div class="space-y-4">
                     <h3 class="text-xl font-bold text-slate-200">Top 20 Local Parent Combinations</h3>
                     {% if top_parent_pairs %}
-                        <div class="grid grid-cols-1 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {% for pair in top_parent_pairs %}
-                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                                <div class="space-y-2">
-                                    <div class="flex items-center gap-3">
+                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between gap-3 shadow-md hover:border-slate-700 transition-all">
+                                <div>
+                                    <!-- Header Badges -->
+                                    <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
                                         <span class="bg-purple-950 border border-purple-800 text-purple-300 font-bold text-xs px-2.5 py-1 rounded-full">
                                             {{ pair.unique_white_count }} Unique Whites
                                         </span>
-                                        <span class="text-xs text-slate-400">Main overlap count: {{ pair.main_white_count }}</span>
+                                        <span class="text-xs text-slate-400">Main overlap: {{ pair.main_white_count }}</span>
                                     </div>
-                                    <div class="text-sm font-semibold text-slate-200">
-                                        🔗 Parent 1: <span class="text-purple-400">{{ pair.parent1.display_name }}</span> ({{ pair.parent1.rank_score }} Rank) 
-                                        <span class="text-slate-500">vs</span> 
-                                        Parent 2: <span class="text-purple-400">{{ pair.parent2.display_name }}</span> ({{ pair.parent2.rank_score }} Rank)
+
+                                    <!-- Parent 1 -->
+                                    <div class="space-y-1.5 mb-3 pb-3 border-b border-slate-800/80 text-xs">
+                                        <div class="flex flex-wrap items-baseline gap-1.5">
+                                            <span class="text-slate-400 font-semibold">Parent 1:</span>
+                                            <strong class="text-purple-400 text-sm">{{ pair.parent1.display_name }}</strong>
+                                            <span class="text-slate-500">({{ pair.parent1.rank_score }} Rank)</span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-1 mt-1">
+                                            {% for f in pair.parent1.localized_factors %}
+                                                {% if f.category in ['blue', 'pink'] %}
+                                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
+                                                        {% if f.category == 'blue' %}bg-blue-950/60 border border-blue-800/60 text-blue-300{% else %}bg-pink-950/60 border border-pink-800/60 text-pink-300{% endif %}">
+                                                        {{ '★' * f.star }}{{ f.name }}
+                                                    </span>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                    <!-- Parent 2 -->
+                                    <div class="space-y-1.5 text-xs">
+                                        <div class="flex flex-wrap items-baseline gap-1.5">
+                                            <span class="text-slate-400 font-semibold">Parent 2:</span>
+                                            <strong class="text-purple-400 text-sm">{{ pair.parent2.display_name }}</strong>
+                                            <span class="text-slate-500">({{ pair.parent2.rank_score }} Rank)</span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-1 mt-1">
+                                            {% for f in pair.parent2.localized_factors %}
+                                                {% if f.category in ['blue', 'pink'] %}
+                                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
+                                                        {% if f.category == 'blue' %}bg-blue-950/60 border border-blue-800/60 text-blue-300{% else %}bg-pink-950/60 border border-pink-800/60 text-pink-300{% endif %}">
+                                                        {{ '★' * f.star }}{{ f.name }}
+                                                    </span>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
