@@ -3,453 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Uma Roster & Parent Tool</title>
+    <title>Uma Parent Tool & Roster Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>body { background-color: #0f172a; color: #f8fafc; }</style>
 </head>
-<body class="min-h-screen p-6">
-    <header class="max-w-6xl mx-auto mb-6 flex flex-col md:flex-row justify-between items-center border-b border-slate-800 pb-4 gap-4">
-        <div>
-            <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Uma Parent Tool & Roster Viewer
-            </h1>
-            <span class="text-sm text-slate-400">Total Roster: {{ veterans | length }}</span>
-        </div>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
 
-        <!-- Settings Bar: API Key & Data.json Loader -->
-        <div class="flex flex-wrap items-center gap-3 bg-slate-900 border border-slate-700/80 p-2.5 rounded-xl text-xs">
-            <div class="flex items-center gap-1.5">
-                <label for="api_key_input" class="text-slate-400 font-medium">API Key:</label>
-                <input type="password" id="api_key_input" placeholder="Enter Uma API Key" onchange="saveApiKey(this.value)" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-slate-200 focus:outline-none focus:border-purple-500 w-32">
+    <div class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow">
+        <!-- Header -->
+        <header class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+                    Uma Parent Tool & Roster Viewer
+                </h1>
+                <p class="text-slate-400 text-sm mt-1">Manage your roster and find optimal breeding parents.</p>
             </div>
-            <form action="/" method="POST" enctype="multipart/form-data" class="flex items-center gap-1.5">
-                <label class="text-slate-400 font-medium">data.json:</label>
-                <input type="file" name="data_file" accept=".json" onchange="this.form.submit()" class="text-[10px] text-slate-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-[10px] file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500 cursor-pointer">
-            </form>
-        </div>
-    </header>
-
-    <!-- Navigation Tabs Bar -->
-    <div class="max-w-6xl mx-auto mb-6 flex border-b border-slate-800">
-        <button onclick="switchTab('roster')" id="btn-roster" class="px-6 py-3 font-semibold text-sm border-b-2 border-purple-500 text-purple-400 focus:outline-none transition-colors">
-            Roster / Veterans
-        </button>
-        <button onclick="switchTab('finder')" id="btn-finder" class="px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-200 focus:outline-none transition-colors">
-            Parent Finder
-        </button>
-    </div>
-
-    <!-- TAB 1: ROSTER / VETERANS -->
-    <div id="tab-roster" class="tab-content">
-        <div class="max-w-6xl mx-auto mb-6 flex justify-end">
-            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-700/60 px-4 py-2 rounded-xl">
-                <label for="sort" class="text-xs text-slate-400 font-medium">Order by Rank Score:</label>
-                <select id="sort" name="sort" onchange="location = this.value;" class="bg-slate-800 border border-slate-700 text-xs text-slate-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-purple-500">
-                    <option value="/?sort=desc" {% if current_sort == 'desc' %}selected{% endif %}>Highest to Lowest (Desc)</option>
-                    <option value="/?sort=asc" {% if current_sort == 'asc' %}selected{% endif %}>Lowest to Highest (Asc)</option>
-                </select>
+            <div class="text-sm bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl">
+                <span class="text-slate-400 font-medium">Total Roster:</span> 
+                <span class="text-purple-400 font-bold ml-1">{{ veterans|length }}</span>
             </div>
-        </div>
+        </header>
 
-        <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% for v in veterans %}
-            <div class="bg-slate-800/80 border border-slate-700/70 rounded-xl p-5 shadow-lg flex flex-col justify-between">
+        <!-- Top Setup Controls -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-8 shadow-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                
+                <!-- Data File Section -->
                 <div>
-                    <div class="mb-3">
-                        <span class="text-xs text-purple-400 font-semibold uppercase">{{ v.display_title }}</span>
-                        <h2 class="text-xl font-bold text-white">{{ v.display_name }}</h2>
-                        <span class="text-xs text-slate-400">ID: #{% if v.trained_chara_id %}{{ v.trained_chara_id }}{% else %}{{ v.card_id }}{% endif %}</span>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">data.json:</label>
+                    <form method="POST" enctype="multipart/form-data" class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                        <input type="file" name="data_file" id="data_file_input" accept=".json" class="text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500 cursor-pointer" required>
+                        <button type="submit" class="bg-purple-600 hover:bg-purple-500 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors whitespace-nowrap">
+                            {{ 'Load again' if has_data_file else 'Upload & Load' }}
+                        </button>
+                    </form>
+                    <div class="mt-2 text-xs">
+                        {% if has_data_file %}
+                            <span class="text-emerald-400 font-medium">● File loaded</span>
+                        {% else %}
+                            <span class="text-slate-400">Nessun file selezionato</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Uma.moe API Key Section -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Uma.moe API Key:</label>
+                    <div class="flex items-center gap-2">
+                        <input type="password" id="api_key_input" placeholder="Enter Uma.moe API Key" class="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-purple-500 flex-grow">
+                        <button type="button" onclick="saveApiKeyFromInput()" class="bg-purple-600 hover:bg-purple-500 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors whitespace-nowrap">
+                            Load API Key
+                        </button>
+                    </div>
+                    <div class="mt-2 text-xs">
+                        <span id="api_status_text" class="text-slate-400">API Key not loaded</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex border-b border-slate-800 mb-6">
+            <button onclick="switchTab('roster')" id="btn-roster" class="px-6 py-3 font-semibold text-sm border-b-2 border-purple-500 text-purple-400 focus:outline-none transition-colors">
+                Roster / Veterans
+            </button>
+            <button onclick="switchTab('finder')" id="btn-finder" class="px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-200 focus:outline-none transition-colors">
+                Parent Finder
+            </button>
+        </div>
+
+        <!-- Tab 1: Roster -->
+        <div id="tab-roster" class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
+                <span class="text-sm font-medium text-slate-300">Order by Rank Score:</span>
+                <div class="flex items-center gap-2">
+                    <a href="/?sort=desc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'desc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Highest to Lowest (Desc)
+                    </a>
+                    <a href="/?sort=asc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'asc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Lowest to Highest (Asc)
+                    </a>
+                </div>
+            </div>
+
+            {% if veterans %}
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {% for v in veterans %}
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-md flex flex-col justify-between hover:border-slate-700 transition-all">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h3 class="font-bold text-lg text-slate-100">{{ v.display_name }}</h3>
+                                    <p class="text-xs text-purple-400">{{ v.display_title }}</p>
+                                </div>
+                                <span class="bg-purple-950 text-purple-300 border border-purple-800 text-xs font-bold px-2.5 py-1 rounded-full">
+                                    {{ v.rank_score }} Rank
+                                </span>
+                            </div>
+
+                            <!-- Stats Row -->
+                            <div class="grid grid-cols-5 gap-1 my-3 text-center bg-slate-950 p-2 rounded-lg border border-slate-800/60 text-xs">
+                                <div>
+                                    <span class="block text-slate-500 font-semibold">SPD</span>
+                                    <span class="font-bold text-slate-200">{{ v.speed }}</span>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-500 font-semibold">STA</span>
+                                    <span class="font-bold text-slate-200">{{ v.stamina }}</span>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-500 font-semibold">PWR</span>
+                                    <span class="font-bold text-slate-200">{{ v.power }}</span>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-500 font-semibold">GUT</span>
+                                    <span class="font-bold text-slate-200">{{ v.guts }}</span>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-500 font-semibold">WIZ</span>
+                                    <span class="font-bold text-slate-200">{{ v.wiz }}</span>
+                                </div>
+                            </div>
+
+                            <!-- Factors / Skills Summary -->
+                            <div class="space-y-2 mt-4 text-xs">
+                                <h4 class="font-semibold text-slate-400 uppercase tracking-wider text-[10px]">Factors Highlight</h4>
+                                <div class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1">
+                                    {% for f in v.localized_factors %}
+                                        <span class="px-2 py-0.5 rounded-md border text-[11px] 
+                                            {% if f.category == 'blue' %} bg-blue-950/40 border-blue-800 text-blue-300 
+                                            {% elif f.category == 'pink' %} bg-pink-950/40 border-pink-800 text-pink-300 
+                                            {% else %} bg-slate-800/60 border-slate-700 text-slate-300 {% endif %}">
+                                            {{ f.name }} (★{{ f.star }})
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Parents Section -->
+                        <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <span class="font-semibold block mb-1 text-slate-300">Parents:</span>
+                            <div class="space-y-1">
+                                {% for p in v.localized_parents %}
+                                    <div class="truncate"><strong class="text-slate-300">{{ p.name }}</strong> <span class="text-slate-500">({{ p.title }})</span></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="text-center py-16 bg-slate-900 border border-slate-800 rounded-xl">
+                    <p class="text-slate-400">No veterans found. Please upload your <code class="text-purple-400 bg-slate-800 px-2 py-1 rounded">data.json</code> file using the uploader above.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Tab 2: Parent Finder -->
+        <div id="tab-finder" class="hidden space-y-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl space-y-6">
+                <h3 class="text-lg font-bold text-slate-200">Parent Pairing & Search Tool</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Filter Blue Factor:</label>
+                        <select id="blue_factor" onchange="toggleMainOnlyVisibility()" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-sm text-slate-200 focus:outline-none focus:border-purple-500">
+                            <option value="">-- Any / None --</option>
+                            <option value="Speed" {% if blue_factor == 'Speed' %}selected{% endif %}>Speed</option>
+                            <option value="Stamina" {% if blue_factor == 'Stamina' %}selected{% endif %}>Stamina</option>
+                            <option value="Power" {% if blue_factor == 'Power' %}selected{% endif %}>Power</option>
+                            <option value="Guts" {% if blue_factor == 'Guts' %}selected{% endif %}>Guts</option>
+                            <option value="Wisdom" {% if blue_factor == 'Wisdom' %}selected{% endif %}>Wisdom</option>
+                        </select>
                     </div>
 
-                    <div class="grid grid-cols-5 gap-1 bg-slate-900/60 p-2 rounded-lg text-center mb-3 border border-slate-800 text-xs">
-                        <div><span class="text-slate-500 block text-[10px]">SPD</span><strong>{{ v.speed }}</strong></div>
-                        <div><span class="text-slate-500 block text-[10px]">STA</span><strong>{{ v.stamina }}</strong></div>
-                        <div><span class="text-slate-500 block text-[10px]">POW</span><strong>{{ v.power }}</strong></div>
-                        <div><span class="text-slate-500 block text-[10px]">GUT</span><strong>{{ v.guts }}</strong></div>
-                        <div><span class="text-slate-500 block text-[10px]">WIZ</span><strong>{{ v.wiz }}</strong></div>
+                    <div id="main-scope-container" class="flex items-center gap-2 h-10 {% if not blue_factor %}style='display: none;'{% endif %}">
+                        <input type="checkbox" id="blue_scope" {% if blue_scope == 'main' %}checked{% endif %} class="w-4 h-4 rounded border-slate-700 text-purple-600 focus:ring-purple-500 bg-slate-800">
+                        <label for="blue_scope" class="text-sm text-slate-300 cursor-pointer">Main Parent Only (Exclude Grandparents)</label>
                     </div>
 
-                    <div class="flex justify-between items-center bg-purple-950/40 border border-purple-900/50 px-3 py-1.5 rounded-lg text-xs mb-3">
-                        <span class="text-purple-300 font-medium">Rank Score</span>
-                        <span class="font-bold text-white">{{ v.rank_score }}</span>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Pair Sorting Priority:</label>
+                        <div class="flex items-center gap-4 pt-2">
+                            <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                                <input type="radio" name="pair_sort" value="main_total" {% if pair_sort != 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                                Main then Unique
+                            </label>
+                            <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                                <input type="radio" name="pair_sort" value="total_main" {% if pair_sort == 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                                Unique then Main
+                            </label>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <span class="text-[10px] text-slate-400 font-semibold block mb-1">Inheritance Sparks:</span>
-                        <div class="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto pr-1">
-                            {% for factor in v.localized_factors %}
-                                {% if factor.category == 'blue' %}
-                                <span class="text-[10px] px-2 py-0.5 rounded-md bg-sky-950/80 border border-sky-800/60 text-sky-300 flex items-center gap-1 font-medium">
-                                    <span>{{ factor.name }}</span>
-                                    <span class="text-sky-400">{{ '★' * factor.star }}</span>
-                                </span>
-                                {% elif factor.category == 'pink' %}
-                                <span class="text-[10px] px-2 py-0.5 rounded-md bg-pink-950/80 border border-pink-800/60 text-pink-300 flex items-center gap-1 font-medium">
-                                    <span>{{ factor.name }}</span>
-                                    <span class="text-pink-400">{{ '★' * factor.star }}</span>
-                                </span>
-                                {% else %}
-                                <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-900/90 border border-slate-700/80 text-slate-200 flex items-center gap-1 font-medium">
-                                    <span>{{ factor.name }}</span>
-                                    <span class="text-amber-300">{{ '★' * factor.star }}</span>
-                                </span>
-                                {% endif %}
-                            {% else %}
-                                <span class="text-[11px] text-slate-500 italic">No spark data found</span>
+                <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-4 items-center">
+                    <button onclick="triggerAction('local_sparks')" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors shadow-lg shadow-purple-900/30">
+                        Find Best Local Pairs ({{ filtered_count }} Vets)
+                    </button>
+                    <button onclick="triggerAction('rental_min_20')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-purple-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
+                        Find Rental Parents (Min 20 Main Whites)
+                    </button>
+                    <button onclick="triggerAction('rental_top_whites')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-purple-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
+                        Find Top White Sparks Rentals
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            {% if action_triggered == 'local_sparks' %}
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-200">Top 20 Local Parent Combinations</h3>
+                    {% if top_parent_pairs %}
+                        <div class="grid grid-cols-1 gap-4">
+                            {% for pair in top_parent_pairs %}
+                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-3">
+                                        <span class="bg-purple-950 border border-purple-800 text-purple-300 font-bold text-xs px-2.5 py-1 rounded-full">
+                                            {{ pair.unique_white_count }} Unique Whites
+                                        </span>
+                                        <span class="text-xs text-slate-400">Main overlap count: {{ pair.main_white_count }}</span>
+                                    </div>
+                                    <div class="text-sm font-semibold text-slate-200">
+                                        🔗 Parent 1: <span class="text-purple-400">{{ pair.parent1.display_name }}</span> ({{ pair.parent1.rank_score }} Rank) 
+                                        <span class="text-slate-500">vs</span> 
+                                        Parent 2: <span class="text-purple-400">{{ pair.parent2.display_name }}</span> ({{ pair.parent2.rank_score }} Rank)
+                                    </div>
+                                </div>
+                            </div>
                             {% endfor %}
                         </div>
-                    </div>
-
-                    <details class="group mb-3 border border-slate-700/60 rounded-lg bg-slate-900/40">
-                        <summary class="cursor-pointer px-3 py-2 text-xs font-medium text-purple-300 flex justify-between items-center select-none hover:bg-slate-800/50 rounded-lg">
-                            <span>Parents ({{ v.localized_parents | length }})</span>
-                            <span class="transform group-open:rotate-180 transition-transform text-slate-400 text-[10px]">▼</span>
-                        </summary>
-                        <div class="p-3 border-t border-slate-800 space-y-2.5 text-xs">
-                            {% if v.localized_parents %}
-                                {% for parent in v.localized_parents %}
-                                <div class="bg-slate-800/60 p-2.5 rounded-md border border-slate-700/40">
-                                    <div class="flex justify-between items-start mb-1">
-                                        <div>
-                                            <span class="text-[10px] text-purple-400 font-semibold uppercase">{{ parent.title }}</span>
-                                            <div class="font-bold text-white text-xs">{{ parent.name }}</div>
-                                        </div>
-                                        <span class="bg-purple-950/60 text-purple-300 px-1.5 py-0.5 rounded text-[10px] font-semibold">
-                                            {% if parent.rank_score != '-' and parent.rank_score != 'N/A' %}Score: {{ parent.rank_score }}{% else %}Rental / External{% endif %}
+                    {% else %}
+                        <div class="text-center py-12 bg-slate-900 border border-slate-800 rounded-xl text-slate-400">
+                            No valid parent pairs found with current filters.
+                        </div>
+                    {% endif %}
+                </div>
+            {% elif action_triggered in ['rental_min_20', 'rental_top_whites'] %}
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-200">{{ external_title }}</h3>
+                    {% if external_results %}
+                        <div class="grid grid-cols-1 gap-4">
+                            {% for ext in external_results %}
+                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-1">
+                                        <span class="bg-purple-950 border border-purple-800 text-purple-300 font-bold text-xs px-2.5 py-1 rounded-full">
+                                            Combined Unique: {{ ext.combined_unique_count }}
                                         </span>
+                                        <span class="text-xs text-slate-400">Trainer: <strong class="text-slate-300">{{ ext.trainer_name }}</strong></span>
+                                        <span class="text-xs text-slate-500">ID: {{ ext.account_id }}</span>
                                     </div>
-                                    
-                                    {% if parent.speed != '-' %}
-                                    <div class="grid grid-cols-5 gap-1 bg-slate-900/80 p-1.5 rounded text-center text-[10px] text-slate-300 mt-2">
-                                        <div><span class="text-slate-500 block text-[9px]">SPD</span>{{ parent.speed }}</div>
-                                        <div><span class="text-slate-500 block text-[9px]">STA</span>{{ parent.stamina }}</div>
-                                        <div><span class="text-slate-500 block text-[9px]">POW</span>{{ parent.power }}</div>
-                                        <div><span class="text-slate-500 block text-[9px]">GUT</span>{{ parent.guts }}</div>
-                                        <div><span class="text-slate-500 block text-[9px]">WIZ</span>{{ parent.wiz }}</div>
-                                    </div>
-                                    {% else %}
-                                    <div class="text-[10px] text-slate-500 italic mt-1.5 bg-slate-900/40 p-1 rounded text-center border border-slate-800/50">
-                                        Stats not available for rental parents
-                                    </div>
-                                    {% endif %}
-
-                                    {% if parent.factors %}
-                                    <div class="mt-2 flex flex-wrap gap-1">
-                                        {% for pf in parent.factors %}
-                                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-300">
-                                            {{ pf.name }} <span class="text-amber-300">{{ '★' * pf.star }}</span>
-                                        </span>
-                                        {% endfor %}
-                                    </div>
+                                    <h4 class="font-bold text-base text-slate-100">{{ ext.chara_name }} <span class="text-xs font-normal text-purple-400">({{ ext.chara_title }})</span></h4>
+                                    {% if ext.best_veteran %}
+                                        <p class="text-xs text-slate-400 mt-1">Best Roster Match: <strong class="text-slate-200">{{ ext.best_veteran.display_name }}</strong></p>
                                     {% endif %}
                                 </div>
-                                {% endfor %}
-                            {% else %}
-                                <p class="text-slate-500 italic text-center py-1">No parent records found.</p>
-                            {% endif %}
-                        </div>
-                    </details>
-
-                    <div class="text-xs text-slate-300 mb-2">
-                        <span class="font-semibold text-slate-400">Skills Acquired:</span> {{ v.localized_skills | length }}
-                    </div>
-                </div>
-
-                <div class="text-[11px] text-slate-500 border-t border-slate-700/50 pt-2 mt-2">
-                    Registered: {{ v.register_time }}
-                </div>
-            </div>
-            {% else %}
-            <div class="col-span-full text-center py-20 text-slate-500">
-                <p>No veterans found. Please upload your <code>data.json</code> file using the uploader above.</p>
-            </div>
-            {% endfor %}
-        </main>
-    </div>
-
-    <!-- TAB 2: PARENT FINDER -->
-    <div id="tab-finder" class="tab-content hidden">
-        <div class="max-w-6xl mx-auto space-y-6">
-            <div class="bg-slate-800/80 border border-slate-700/70 rounded-xl p-6 shadow-lg flex flex-col gap-5">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
-                    <div>
-                        <h2 class="text-xl font-bold text-white mb-1">Optimal Parent Finder</h2>
-                        <p class="text-slate-400 text-sm">Filter your roster by blue factor sparks and scan optimal pairs or rentals.</p>
-                    </div>
-                    <span class="bg-slate-900/80 border border-slate-700/60 px-3 py-1 rounded-lg text-xs text-purple-300 font-medium">
-                        Matching Local Veterans: {{ filtered_count }} / {{ veterans | length }}
-                    </span>
-                </div>
-
-                <div class="flex flex-col lg:flex-row justify-between items-center gap-4 bg-slate-900/60 border border-slate-700/60 p-4 rounded-xl">
-                    <div class="flex flex-wrap items-center gap-6 w-full lg:w-auto">
-                        <div>
-                            <label for="blue_factor" class="block text-[10px] text-slate-400 font-semibold mb-1">Blue Factor Filter:</label>
-                            <select id="blue_factor" onchange="toggleMainOnlyVisibility()" class="bg-slate-800 border border-slate-700 text-xs text-slate-200 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-500">
-                                <option value="">-- Any Blue Factor --</option>
-                                <option value="Speed" {% if blue_factor == 'Speed' %}selected{% endif %}>Speed</option>
-                                <option value="Stamina" {% if blue_factor == 'Stamina' %}selected{% endif %}>Stamina</option>
-                                <option value="Power" {% if blue_factor == 'Power' %}selected{% endif %}>Power</option>
-                                <option value="Guts" {% if blue_factor == 'Guts' %}selected{% endif %}>Guts</option>
-                                <option value="Wisdom" {% if blue_factor == 'Wisdom' or blue_factor == 'Wiz' %}selected{% endif %}>Wisdom / Wiz</option>
-                            </select>
-                        </div>
-                        <div class="flex flex-col gap-2 mt-2 lg:mt-0">
-                            <div id="main-scope-container" class="flex items-center gap-2" {% if not blue_factor %}style="display: none;"{% endif %}>
-                                <input type="checkbox" id="blue_scope" value="main" {% if blue_scope == 'main' %}checked{% endif %} class="w-4 h-4 accent-purple-600 bg-slate-800 border-slate-700 rounded">
-                                <label for="blue_scope" class="text-xs text-slate-300 font-medium select-none cursor-pointer">Main Only (Direct Factor)</label>
                             </div>
+                            {% endfor %}
                         </div>
-
-                        <div class="flex flex-col gap-1.5">
-                            <span class="block text-[10px] text-slate-400 font-semibold">Sort by:</span>
-                            <div class="flex items-center gap-4">
-                                <label class="flex items-center gap-1.5 text-xs text-slate-200 cursor-pointer select-none">
-                                    <input type="radio" name="pair_sort" value="main_total" {% if pair_sort == 'main_total' %}checked{% endif %} class="w-4 h-4 accent-purple-600 bg-slate-800 border-slate-700">
-                                    Main Parent White Skills
-                                </label>
-                                <label class="flex items-center gap-1.5 text-xs text-slate-200 cursor-pointer select-none">
-                                    <input type="radio" name="pair_sort" value="total_main" {% if pair_sort == 'total_main' %}checked{% endif %} class="w-4 h-4 accent-purple-600 bg-slate-800 border-slate-700">
-                                    Total White Skills
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2.5 w-full lg:w-auto justify-end">
-                        <button onclick="triggerAction('local_sparks')" class="px-4 py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs rounded-xl shadow-lg transition-colors flex items-center gap-1.5">
-                            <span>✨ Local Sparks</span>
-                        </button>
-                        <button onclick="triggerAction('rental_min_20')" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-xl shadow-lg transition-colors flex items-center gap-1.5">
-                            <span>🔍 20+ White (Rental)</span>
-                        </button>
-                        <button onclick="triggerAction('rental_top_whites')" class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-xl shadow-lg transition-colors flex items-center gap-1.5">
-                            <span>🌟 Top White Sparks (Rental)</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ACTION 1: LOCAL SPARKS -->
-            {% if action_triggered == 'local_sparks' %}
-                <div class="flex justify-between items-center bg-slate-800/60 border border-slate-700/60 px-4 py-3 rounded-xl">
-                    <span class="text-sm text-slate-300 font-medium">
-                        Showing top 20 optimal local pairs ranked by <b>{% if pair_sort == 'total_main' %}Total White Skills{% else %}Main Parent White Skills{% endif %}</b>:
-                    </span>
-                    <a href="/" onclick="localStorage.setItem('active_tab', 'finder')" class="text-xs text-purple-400 hover:underline">Reset Filter</a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {% for pair in top_parent_pairs %}
-                    <div class="bg-slate-800/80 border border-slate-700/70 rounded-xl p-5 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4 border-b border-slate-700/60 pb-3">
-                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Combination #{{ loop.index }}</span>
-                                <span class="text-[11px] text-purple-300 font-medium bg-purple-950/60 px-2.5 py-1 rounded-lg border border-purple-900/50">
-                                    Main Unique: <strong>{{ pair.main_white_count }}</strong> | Total Unique: <strong>{{ pair.unique_white_count }}</strong>
-                                </span>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-                                <!-- Parent 1 -->
-                                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 text-xs">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <div>
-                                            <span class="text-[9px] text-purple-400 font-semibold uppercase block truncate">{{ pair.parent1.display_title }}</span>
-                                            <div class="font-bold text-white text-xs truncate">{{ pair.parent1.display_name }}</div>
-                                        </div>
-                                        <span class="bg-purple-950/60 text-purple-300 px-1.5 py-0.5 rounded text-[10px] font-semibold flex-shrink-0">
-                                            Score: {{ pair.parent1.rank_score }}
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span class="text-[9px] text-slate-400 block mb-1">Sparks:</span>
-                                        <div class="flex flex-wrap gap-1 max-h-28 overflow-y-auto pr-1">
-                                            {% for factor in pair.parent1.localized_factors %}
-                                                {% if factor.category == 'blue' %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-950/80 border border-sky-800/60 text-sky-300 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-sky-400">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% elif factor.category == 'pink' %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-pink-950/80 border border-pink-800/60 text-pink-300 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-pink-400">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% else %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-amber-300">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% endif %}
-                                            {% else %}
-                                                <span class="text-[9px] text-slate-500 italic">No spark data found</span>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Parent 2 -->
-                                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 text-xs">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <div>
-                                            <span class="text-[9px] text-purple-400 font-semibold uppercase block truncate">{{ pair.parent2.display_title }}</span>
-                                            <div class="font-bold text-white text-xs truncate">{{ pair.parent2.display_name }}</div>
-                                        </div>
-                                        <span class="bg-purple-950/60 text-purple-300 px-1.5 py-0.5 rounded text-[10px] font-semibold flex-shrink-0">
-                                            Score: {{ pair.parent2.rank_score }}
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span class="text-[9px] text-slate-400 block mb-1">Sparks:</span>
-                                        <div class="flex flex-wrap gap-1 max-h-28 overflow-y-auto pr-1">
-                                            {% for factor in pair.parent2.localized_factors %}
-                                                {% if factor.category == 'blue' %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-950/80 border border-sky-800/60 text-sky-300 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-sky-400">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% elif factor.category == 'pink' %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-pink-950/80 border border-pink-800/60 text-pink-300 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-pink-400">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% else %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-amber-300">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% endif %}
-                                            {% else %}
-                                                <span class="text-[9px] text-slate-500 italic">No spark data found</span>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <details class="group border border-slate-700/60 rounded-lg bg-slate-900/40">
-                                <summary class="cursor-pointer px-3 py-2.5 text-xs font-semibold text-purple-300 flex justify-between items-center select-none hover:bg-slate-800/50 rounded-lg">
-                                    <span>All Combined Unique White Sparks ({{ pair.unique_white_count }})</span>
-                                    <span class="transform group-open:rotate-180 transition-transform text-slate-400 text-[10px]">▼</span>
-                                </summary>
-                                <div class="p-3 border-t border-slate-800">
-                                    <div class="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1">
-                                        {% for wf in pair.unique_white_factors %}
-                                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-900/90 border border-slate-700/80 text-slate-200 flex items-center gap-1 font-medium">
-                                            <span>{{ wf.name }}</span>
-                                            <span class="text-amber-300">{{ '★' * wf.star }}</span>
-                                        </span>
-                                        {% else %}
-                                        <span class="text-xs text-slate-500 italic">No white sparks available between these two.</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
                     {% else %}
-                    <div class="col-span-full text-center py-16 text-slate-500 bg-slate-800/40 rounded-xl border border-slate-700/60">
-                        <p>No local veteran combinations match your blue factor criteria (minimum 2 required).</p>
-                    </div>
-                    {% endfor %}
-                </div>
-
-            <!-- ACTIONS 2 & 3: EXTERNAL RENTAL API RESULTS -->
-            {% elif action_triggered == 'rental_min_20' or action_triggered == 'rental_top_whites' %}
-                <div class="flex justify-between items-center bg-slate-800/60 border border-slate-700/60 px-4 py-3 rounded-xl">
-                    <span class="text-sm text-slate-300 font-medium">{{ external_title }} (Top {{ external_results | length }})</span>
-                    <a href="/" onclick="localStorage.setItem('active_tab', 'finder')" class="text-xs text-purple-400 hover:underline">Reset Filter</a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {% for item in external_results %}
-                    <div class="bg-slate-800/80 border border-slate-700/70 rounded-xl p-5 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-3 border-b border-slate-700/60 pb-2">
-                                <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Ranked #{{ loop.index }}</span>
-                                <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded font-mono">ID: {{ item.account_id }}</span>
-                            </div>
-
-                            <div class="mb-3">
-                                <span class="text-[10px] text-purple-400 font-semibold uppercase">{{ item.chara_title }}</span>
-                                <div class="font-bold text-white text-base">{{ item.chara_name }}</div>
-                                <span class="text-xs text-slate-400">Trainer: {{ item.trainer_name }}</span>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-2 text-xs bg-slate-900/60 p-2.5 rounded-lg border border-slate-800 mb-3 text-center">
-                                <div>
-                                    <span class="text-slate-500 block text-[10px]">Combined Unique White</span>
-                                    <strong class="text-amber-300 text-sm">{{ item.combined_unique_count }}</strong>
-                                </div>
-                                <div>
-                                    <span class="text-slate-500 block text-[10px]">Followers</span>
-                                    <strong>{{ item.follower_num }}</strong>
-                                </div>
-                            </div>
-
-                            {% if item.best_veteran %}
-                            <div class="mt-3 pt-3 border-t border-slate-700/60 text-xs">
-                                <span class="text-[10px] text-slate-400 font-semibold block mb-1.5">Best Match Local Veteran:</span>
-                                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <div>
-                                            <span class="text-[9px] text-purple-400 font-semibold uppercase">{{ item.best_veteran.display_title }}</span>
-                                            <div class="font-bold text-white text-xs">{{ item.best_veteran.display_name }}</div>
-                                        </div>
-                                        <span class="bg-purple-950/60 text-purple-300 px-2 py-0.5 rounded text-[10px] font-semibold">
-                                            Score: {{ item.best_veteran.rank_score }}
-                                        </span>
-                                    </div>
-
-                                    <div>
-                                        <span class="text-[9px] text-slate-400 block mb-1">Veteran Sparks:</span>
-                                        <div class="flex flex-wrap gap-1 max-h-28 overflow-y-auto pr-1">
-                                            {% for factor in item.best_veteran.localized_factors %}
-                                                {% if factor.category == 'blue' %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-950/80 border border-sky-800/60 text-sky-300 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-sky-400">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% elif factor.category == 'pink' %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-pink-950/80 border border-pink-800/60 text-pink-300 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-pink-400">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% else %}
-                                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-200 font-medium flex items-center gap-1">
-                                                    <span>{{ factor.name }}</span>
-                                                    <span class="text-amber-300">{{ '★' * factor.star }}</span>
-                                                </span>
-                                                {% endif %}
-                                            {% else %}
-                                                <span class="text-[9px] text-slate-500 italic">No spark data found</span>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endif %}
+                        <div class="text-center py-12 bg-slate-900 border border-slate-800 rounded-xl text-slate-400">
+                            No external rental results returned. Ensure your Uma.moe API Key is correct and try again.
                         </div>
-                    </div>
-                    {% else %}
-                    <div class="col-span-full text-center py-16 text-slate-500 bg-slate-800/40 rounded-xl border border-slate-700/60">
-                        <p>No external rental results matched or no local veterans match your blue factor filter criteria.</p>
-                    </div>
-                    {% endfor %}
-                </div>
-
-            <!-- DEFAULT LANDING -->
-            {% else %}
-                <div class="text-center py-20 bg-slate-800/40 border border-slate-700/60 rounded-xl p-8">
-                    <div class="text-4xl mb-3">🧬</div>
-                    <h3 class="text-lg font-bold text-white mb-1">Ready to find your best breeding partners?</h3>
-                    <p class="text-slate-400 text-sm max-w-md mx-auto mb-6">Select a blue factor requirement and sorting preferences above, then click a filter button to analyze combinations or rentals.</p>
+                    {% endif %}
                 </div>
             {% endif %}
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="mt-16 py-8 border-t border-slate-900 bg-slate-950 text-center text-xs text-slate-500 space-y-1">
+        <p>Resources and API provided by <a href="https://uma.moe/" target="_blank" class="text-purple-400 hover:underline font-medium">Uma.moe</a>.</p>
+        <p>Need to generate your data JSON? Use the <a href="https://github.com/xancia/UmaExtractor/releases/tag/v2.1" target="_blank" class="text-purple-400 hover:underline font-medium">UmaExtractor tool</a>.</p>
+    </footer>
+
+    <!-- JavaScript Support -->
     <script>
         function switchTab(tabName) {
             const rosterTab = document.getElementById('tab-roster');
@@ -487,8 +318,28 @@
             }
         }
 
-        function saveApiKey(val) {
-            localStorage.setItem('uma_api_key', val);
+        function saveApiKeyFromInput() {
+            const val = document.getElementById('api_key_input').value.trim();
+            if (val) {
+                localStorage.setItem('uma_api_key', val);
+                updateApiStatus(true);
+                alert('Uma.moe API Key loaded and saved successfully!');
+            } else {
+                localStorage.removeItem('uma_api_key');
+                updateApiStatus(false);
+                alert('API Key cleared.');
+            }
+        }
+
+        function updateApiStatus(isLoaded) {
+            const statusEl = document.getElementById('api_status_text');
+            if (isLoaded) {
+                statusEl.className = 'text-emerald-400 font-medium';
+                statusEl.textContent = '● API Key loaded';
+            } else {
+                statusEl.className = 'text-slate-400';
+                statusEl.textContent = 'API Key not loaded';
+            }
         }
 
         function triggerAction(action) {
@@ -500,6 +351,11 @@
             const pairSort = selectedPairSort ? selectedPairSort.value : 'main_total';
             
             const apiKey = localStorage.getItem('uma_api_key') || '';
+
+            if ((action === 'rental_min_20' || action === 'rental_top_whites') && !apiKey.trim()) {
+                alert('⚠️ Please enter and load your Uma.moe API Key in the settings bar at the top before using rental features.');
+                return;
+            }
 
             let url = `/?action=${action}`;
             if (blueFactor) url += `&blue_factor=${encodeURIComponent(blueFactor)}`;
@@ -515,6 +371,9 @@
             const savedKey = localStorage.getItem('uma_api_key');
             if (savedKey) {
                 document.getElementById('api_key_input').value = savedKey;
+                updateApiStatus(true);
+            } else {
+                updateApiStatus(false);
             }
 
             const savedTab = localStorage.getItem('active_tab');
@@ -522,6 +381,8 @@
             if (urlParams.has('action') || savedTab === 'finder') {
                 switchTab('finder');
             }
+
+            toggleMainOnlyVisibility();
         });
     </script>
 </body>

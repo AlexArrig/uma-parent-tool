@@ -47,7 +47,7 @@ def index():
     skill_map = load_json_file("skills.json")
     factor_map = load_json_file("factors.json")
     
-    # Handle data.json upload and save it locally
+    # Handle data.json upload and save it locally (overwriting previous data)
     if request.method == "POST" and "data_file" in request.files:
         file = request.files["data_file"]
         if file and file.filename.endswith(".json"):
@@ -326,6 +326,8 @@ def index():
         except Exception as e:
             print("API Error Exception:", e)
 
+    has_data_file = os.path.exists(os.path.join(DATA_DIR, "data.json"))
+
     return render_template(
         "index.html", 
         veterans=localized_veterans, 
@@ -338,7 +340,7 @@ def index():
         blue_scope=blue_scope,
         pair_sort=pair_sort,
         filtered_count=len(filtered_veterans),
-        has_data_loaded=bool(raw_data)
+        has_data_file=has_data_file
     )
 
 if __name__ == "__main__":
