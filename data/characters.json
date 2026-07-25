@@ -1,0 +1,477 @@
+{
+    "100101": {
+        "chara_id": 1001,
+        "name": "Special Week",
+        "title": "Card ID 100101"
+    },
+    "100102": {
+        "chara_id": 1001,
+        "name": "Special Week",
+        "title": "Card ID 100102"
+    },
+    "100103": {
+        "chara_id": 1001,
+        "name": "Special Week",
+        "title": "Card ID 100103"
+    },
+    "9100101": {
+        "chara_id": 1001,
+        "name": "Special Week",
+        "title": "Card ID 9100101"
+    },
+    "100201": {
+        "chara_id": 1002,
+        "name": "Silence Suzuka",
+        "title": "Card ID 100201"
+    },
+    "100301": {
+        "chara_id": 1003,
+        "name": "Tokai Teio",
+        "title": "Card ID 100301"
+    },
+    "100302": {
+        "chara_id": 1003,
+        "name": "Tokai Teio",
+        "title": "Card ID 100302"
+    },
+    "100401": {
+        "chara_id": 1004,
+        "name": "Maruzensky",
+        "title": "Card ID 100401"
+    },
+    "100402": {
+        "chara_id": 1004,
+        "name": "Maruzensky",
+        "title": "Card ID 100402"
+    },
+    "100501": {
+        "chara_id": 1005,
+        "name": "Fuji Kiseki",
+        "title": "Card ID 100501"
+    },
+    "100502": {
+        "chara_id": 1005,
+        "name": "Fuji Kiseki",
+        "title": "Card ID 100502"
+    },
+    "100601": {
+        "chara_id": 1006,
+        "name": "Oguri Cap",
+        "title": "Card ID 100601"
+    },
+    "100602": {
+        "chara_id": 1006,
+        "name": "Oguri Cap",
+        "title": "Card ID 100602"
+    },
+    "100701": {
+        "chara_id": 1007,
+        "name": "Gold Ship",
+        "title": "Card ID 100701"
+    },
+    "100702": {
+        "chara_id": 1007,
+        "name": "Gold Ship",
+        "title": "Card ID 100702"
+    },
+    "100801": {
+        "chara_id": 1008,
+        "name": "Vodka",
+        "title": "Card ID 100801"
+    },
+    "100901": {
+        "chara_id": 1009,
+        "name": "Daiwa Scarlet",
+        "title": "Card ID 100901"
+    },
+    "101001": {
+        "chara_id": 1010,
+        "name": "Taiki Shuttle",
+        "title": "Card ID 101001"
+    },
+    "101002": {
+        "chara_id": 1010,
+        "name": "Taiki Shuttle",
+        "title": "Card ID 101002"
+    },
+    "101101": {
+        "chara_id": 1011,
+        "name": "Grass Wonder",
+        "title": "Card ID 101101"
+    },
+    "101102": {
+        "chara_id": 1011,
+        "name": "Grass Wonder",
+        "title": "Card ID 101102"
+    },
+    "9101101": {
+        "chara_id": 1011,
+        "name": "Grass Wonder",
+        "title": "Card ID 9101101"
+    },
+    "101201": {
+        "chara_id": 1012,
+        "name": "Hishi Amazon",
+        "title": "Card ID 101201"
+    },
+    "101301": {
+        "chara_id": 1013,
+        "name": "Mejiro McQueen",
+        "title": "Card ID 101301"
+    },
+    "101302": {
+        "chara_id": 1013,
+        "name": "Mejiro McQueen",
+        "title": "Card ID 101302"
+    },
+    "101303": {
+        "chara_id": 1013,
+        "name": "Mejiro McQueen",
+        "title": "Card ID 101303"
+    },
+    "101401": {
+        "chara_id": 1014,
+        "name": "El Condor Pasa",
+        "title": "Card ID 101401"
+    },
+    "101402": {
+        "chara_id": 1014,
+        "name": "El Condor Pasa",
+        "title": "Card ID 101402"
+    },
+    "101501": {
+        "chara_id": 1015,
+        "name": "T.M. Opera O",
+        "title": "Card ID 101501"
+    },
+    "101502": {
+        "chara_id": 1015,
+        "name": "T.M. Opera O",
+        "title": "Card ID 101502"
+    },
+    "101601": {
+        "chara_id": 1016,
+        "name": "Narita Brian",
+        "title": "Card ID 101601"
+    },
+    "101701": {
+        "chara_id": 1017,
+        "name": "Symboli Rudolf",
+        "title": "Card ID 101701"
+    },
+    "101702": {
+        "chara_id": 1017,
+        "name": "Symboli Rudolf",
+        "title": "Card ID 101702"
+    },
+    "101801": {
+        "chara_id": 1018,
+        "name": "Air Groove",
+        "title": "Card ID 101801"
+    },
+    "101802": {
+        "chara_id": 1018,
+        "name": "Air Groove",
+        "title": "Card ID 101802"
+    },
+    "101901": {
+        "chara_id": 1019,
+        "name": "Agnes Digital",
+        "title": "Card ID 101901"
+    },
+    "102001": {
+        "chara_id": 1020,
+        "name": "Seiun Sky",
+        "title": "Card ID 102001"
+    },
+    "102002": {
+        "chara_id": 1020,
+        "name": "Seiun Sky",
+        "title": "Card ID 102002"
+    },
+    "102101": {
+        "chara_id": 1021,
+        "name": "Tamamo Cross",
+        "title": "Card ID 102101"
+    },
+    "102201": {
+        "chara_id": 1022,
+        "name": "Fine Motion",
+        "title": "Card ID 102201"
+    },
+    "102202": {
+        "chara_id": 1022,
+        "name": "Fine Motion",
+        "title": "Card ID 102202"
+    },
+    "102301": {
+        "chara_id": 1023,
+        "name": "Biwa Hayahide",
+        "title": "Card ID 102301"
+    },
+    "102302": {
+        "chara_id": 1023,
+        "name": "Biwa Hayahide",
+        "title": "Card ID 102302"
+    },
+    "102401": {
+        "chara_id": 1024,
+        "name": "Mayano Top Gun",
+        "title": "Card ID 102401"
+    },
+    "102402": {
+        "chara_id": 1024,
+        "name": "Mayano Top Gun",
+        "title": "Card ID 102402"
+    },
+    "102501": {
+        "chara_id": 1025,
+        "name": "Manhattan Cafe",
+        "title": "Card ID 102501"
+    },
+    "102601": {
+        "chara_id": 1026,
+        "name": "Mihono Bourbon",
+        "title": "Card ID 102601"
+    },
+    "102602": {
+        "chara_id": 1026,
+        "name": "Mihono Bourbon",
+        "title": "Card ID 102602"
+    },
+    "102701": {
+        "chara_id": 1027,
+        "name": "Mejiro Ryan",
+        "title": "Card ID 102701"
+    },
+    "102801": {
+        "chara_id": 1028,
+        "name": "Hishi Akebono",
+        "title": "Card ID 102801"
+    },
+    "103001": {
+        "chara_id": 1030,
+        "name": "Rice Shower",
+        "title": "Card ID 103001"
+    },
+    "103002": {
+        "chara_id": 1030,
+        "name": "Rice Shower",
+        "title": "Card ID 103002"
+    },
+    "103101": {
+        "chara_id": 1031,
+        "name": "Ines Fujin",
+        "title": "Card ID 103101"
+    },
+    "103201": {
+        "chara_id": 1032,
+        "name": "Agnes Tachyon",
+        "title": "Card ID 103201"
+    },
+    "103301": {
+        "chara_id": 1033,
+        "name": "Admire Vega",
+        "title": "Card ID 103301"
+    },
+    "103401": {
+        "chara_id": 1034,
+        "name": "Inari One",
+        "title": "Card ID 103401"
+    },
+    "103501": {
+        "chara_id": 1035,
+        "name": "Winning Ticket",
+        "title": "Card ID 103501"
+    },
+    "103601": {
+        "chara_id": 1036,
+        "name": "Air Shakur",
+        "title": "Card ID 103601"
+    },
+    "103701": {
+        "chara_id": 1037,
+        "name": "Eishin Flash",
+        "title": "Card ID 103701"
+    },
+    "103702": {
+        "chara_id": 1037,
+        "name": "Eishin Flash",
+        "title": "Card ID 103702"
+    },
+    "103801": {
+        "chara_id": 1038,
+        "name": "Curren Chan",
+        "title": "Card ID 103801"
+    },
+    "103802": {
+        "chara_id": 1038,
+        "name": "Curren Chan",
+        "title": "Card ID 103802"
+    },
+    "103901": {
+        "chara_id": 1039,
+        "name": "Kawakami Princess",
+        "title": "Card ID 103901"
+    },
+    "104001": {
+        "chara_id": 1040,
+        "name": "Gold City",
+        "title": "Card ID 104001"
+    },
+    "104002": {
+        "chara_id": 1040,
+        "name": "Gold City",
+        "title": "Card ID 104002"
+    },
+    "104101": {
+        "chara_id": 1041,
+        "name": "Sakura Bakushin O",
+        "title": "Card ID 104101"
+    },
+    "104401": {
+        "chara_id": 1044,
+        "name": "Sweep Tosho",
+        "title": "Card ID 104401"
+    },
+    "104501": {
+        "chara_id": 1045,
+        "name": "Super Creek",
+        "title": "Card ID 104501"
+    },
+    "104502": {
+        "chara_id": 1045,
+        "name": "Super Creek",
+        "title": "Card ID 104502"
+    },
+    "104601": {
+        "chara_id": 1046,
+        "name": "Smart Falcon",
+        "title": "Card ID 104601"
+    },
+    "104602": {
+        "chara_id": 1046,
+        "name": "Smart Falcon",
+        "title": "Card ID 104602"
+    },
+    "104801": {
+        "chara_id": 1048,
+        "name": "Tosen Jordan",
+        "title": "Card ID 104801"
+    },
+    "105001": {
+        "chara_id": 1050,
+        "name": "Narita Taishin",
+        "title": "Card ID 105001"
+    },
+    "105101": {
+        "chara_id": 1051,
+        "name": "Nishino Flower",
+        "title": "Card ID 105101"
+    },
+    "105201": {
+        "chara_id": 1052,
+        "name": "Haru Urara",
+        "title": "Card ID 105201"
+    },
+    "105202": {
+        "chara_id": 1052,
+        "name": "Haru Urara",
+        "title": "Card ID 105202"
+    },
+    "105301": {
+        "chara_id": 1053,
+        "name": "Bamboo Memory",
+        "title": "Card ID 105301"
+    },
+    "105601": {
+        "chara_id": 1056,
+        "name": "Matikanefukukitaru",
+        "title": "Card ID 105601"
+    },
+    "105602": {
+        "chara_id": 1056,
+        "name": "Matikanefukukitaru",
+        "title": "Card ID 105602"
+    },
+    "105801": {
+        "chara_id": 1058,
+        "name": "Meisho Doto",
+        "title": "Card ID 105801"
+    },
+    "105901": {
+        "chara_id": 1059,
+        "name": "Mejiro Dober",
+        "title": "Card ID 105901"
+    },
+    "105902": {
+        "chara_id": 1059,
+        "name": "Mejiro Dober",
+        "title": "Card ID 105902"
+    },
+    "106001": {
+        "chara_id": 1060,
+        "name": "Nice Nature",
+        "title": "Card ID 106001"
+    },
+    "106002": {
+        "chara_id": 1060,
+        "name": "Nice Nature",
+        "title": "Card ID 106002"
+    },
+    "106101": {
+        "chara_id": 1061,
+        "name": "King Halo",
+        "title": "Card ID 106101"
+    },
+    "106102": {
+        "chara_id": 1061,
+        "name": "King Halo",
+        "title": "Card ID 106102"
+    },
+    "106201": {
+        "chara_id": 1062,
+        "name": "Matikanetannhauser",
+        "title": "Card ID 106201"
+    },
+    "106401": {
+        "chara_id": 1064,
+        "name": "Mejiro Palmer",
+        "title": "Card ID 106401"
+    },
+    "106701": {
+        "chara_id": 1067,
+        "name": "Satono Diamond",
+        "title": "Card ID 106701"
+    },
+    "106801": {
+        "chara_id": 1068,
+        "name": "Kitasan Black",
+        "title": "Card ID 106801"
+    },
+    "106901": {
+        "chara_id": 1069,
+        "name": "Sakura Chiyono O",
+        "title": "Card ID 106901"
+    },
+    "107101": {
+        "chara_id": 1071,
+        "name": "Mejiro Ardan",
+        "title": "Card ID 107101"
+    },
+    "107201": {
+        "chara_id": 1072,
+        "name": "Yaeno Muteki",
+        "title": "Card ID 107201"
+    },
+    "107401": {
+        "chara_id": 1074,
+        "name": "Mejiro Bright",
+        "title": "Card ID 107401"
+    },
+    "109801": {
+        "chara_id": 1098,
+        "name": "Copano Rickey",
+        "title": "Card ID 109801"
+    }
+}

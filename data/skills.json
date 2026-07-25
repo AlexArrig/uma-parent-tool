@@ -1,0 +1,2790 @@
+{
+    "10071": {
+        "name": "Skill ID 10071",
+        "description": "Extracted from master.mdb"
+    },
+    "10081": {
+        "name": "Skill ID 10081",
+        "description": "Extracted from master.mdb"
+    },
+    "10091": {
+        "name": "Skill ID 10091",
+        "description": "Extracted from master.mdb"
+    },
+    "10111": {
+        "name": "Skill ID 10111",
+        "description": "Extracted from master.mdb"
+    },
+    "10141": {
+        "name": "Skill ID 10141",
+        "description": "Extracted from master.mdb"
+    },
+    "10181": {
+        "name": "Skill ID 10181",
+        "description": "Extracted from master.mdb"
+    },
+    "10241": {
+        "name": "Skill ID 10241",
+        "description": "Extracted from master.mdb"
+    },
+    "10271": {
+        "name": "Skill ID 10271",
+        "description": "Extracted from master.mdb"
+    },
+    "10321": {
+        "name": "Skill ID 10321",
+        "description": "Extracted from master.mdb"
+    },
+    "10351": {
+        "name": "Skill ID 10351",
+        "description": "Extracted from master.mdb"
+    },
+    "10411": {
+        "name": "Skill ID 10411",
+        "description": "Extracted from master.mdb"
+    },
+    "10451": {
+        "name": "Skill ID 10451",
+        "description": "Extracted from master.mdb"
+    },
+    "10521": {
+        "name": "Skill ID 10521",
+        "description": "Extracted from master.mdb"
+    },
+    "10561": {
+        "name": "Skill ID 10561",
+        "description": "Extracted from master.mdb"
+    },
+    "10601": {
+        "name": "Skill ID 10601",
+        "description": "Extracted from master.mdb"
+    },
+    "10611": {
+        "name": "Skill ID 10611",
+        "description": "Extracted from master.mdb"
+    },
+    "10621": {
+        "name": "Skill ID 10621",
+        "description": "Extracted from master.mdb"
+    },
+    "100011": {
+        "name": "Skill ID 100011",
+        "description": "Extracted from master.mdb"
+    },
+    "100021": {
+        "name": "Skill ID 100021",
+        "description": "Extracted from master.mdb"
+    },
+    "100031": {
+        "name": "Skill ID 100031",
+        "description": "Extracted from master.mdb"
+    },
+    "100041": {
+        "name": "Skill ID 100041",
+        "description": "Extracted from master.mdb"
+    },
+    "100051": {
+        "name": "Skill ID 100051",
+        "description": "Extracted from master.mdb"
+    },
+    "100061": {
+        "name": "Skill ID 100061",
+        "description": "Extracted from master.mdb"
+    },
+    "100071": {
+        "name": "Skill ID 100071",
+        "description": "Extracted from master.mdb"
+    },
+    "100081": {
+        "name": "Skill ID 100081",
+        "description": "Extracted from master.mdb"
+    },
+    "100091": {
+        "name": "Skill ID 100091",
+        "description": "Extracted from master.mdb"
+    },
+    "100101": {
+        "name": "[Special Dreamer] Special Week",
+        "description": "Extracted from master.mdb"
+    },
+    "100111": {
+        "name": "Skill ID 100111",
+        "description": "Extracted from master.mdb"
+    },
+    "100121": {
+        "name": "Skill ID 100121",
+        "description": "Extracted from master.mdb"
+    },
+    "100131": {
+        "name": "Skill ID 100131",
+        "description": "Extracted from master.mdb"
+    },
+    "100141": {
+        "name": "Skill ID 100141",
+        "description": "Extracted from master.mdb"
+    },
+    "100151": {
+        "name": "Skill ID 100151",
+        "description": "Extracted from master.mdb"
+    },
+    "100161": {
+        "name": "Skill ID 100161",
+        "description": "Extracted from master.mdb"
+    },
+    "100171": {
+        "name": "Skill ID 100171",
+        "description": "Extracted from master.mdb"
+    },
+    "100181": {
+        "name": "Skill ID 100181",
+        "description": "Extracted from master.mdb"
+    },
+    "100191": {
+        "name": "Skill ID 100191",
+        "description": "Extracted from master.mdb"
+    },
+    "100201": {
+        "name": "[Innocent Silence] Silence Suzuka",
+        "description": "Extracted from master.mdb"
+    },
+    "100211": {
+        "name": "Skill ID 100211",
+        "description": "Extracted from master.mdb"
+    },
+    "100221": {
+        "name": "Skill ID 100221",
+        "description": "Extracted from master.mdb"
+    },
+    "100231": {
+        "name": "Skill ID 100231",
+        "description": "Extracted from master.mdb"
+    },
+    "100241": {
+        "name": "Skill ID 100241",
+        "description": "Extracted from master.mdb"
+    },
+    "100251": {
+        "name": "Skill ID 100251",
+        "description": "Extracted from master.mdb"
+    },
+    "100261": {
+        "name": "Skill ID 100261",
+        "description": "Extracted from master.mdb"
+    },
+    "100271": {
+        "name": "Skill ID 100271",
+        "description": "Extracted from master.mdb"
+    },
+    "100281": {
+        "name": "Skill ID 100281",
+        "description": "Extracted from master.mdb"
+    },
+    "100301": {
+        "name": "[Peak Joy] Tokai Teio",
+        "description": "Extracted from master.mdb"
+    },
+    "100311": {
+        "name": "Skill ID 100311",
+        "description": "Extracted from master.mdb"
+    },
+    "100321": {
+        "name": "Skill ID 100321",
+        "description": "Extracted from master.mdb"
+    },
+    "100331": {
+        "name": "Skill ID 100331",
+        "description": "Extracted from master.mdb"
+    },
+    "100341": {
+        "name": "Skill ID 100341",
+        "description": "Extracted from master.mdb"
+    },
+    "100351": {
+        "name": "Skill ID 100351",
+        "description": "Extracted from master.mdb"
+    },
+    "100361": {
+        "name": "Skill ID 100361",
+        "description": "Extracted from master.mdb"
+    },
+    "100371": {
+        "name": "Skill ID 100371",
+        "description": "Extracted from master.mdb"
+    },
+    "100381": {
+        "name": "Skill ID 100381",
+        "description": "Extracted from master.mdb"
+    },
+    "100391": {
+        "name": "Skill ID 100391",
+        "description": "Extracted from master.mdb"
+    },
+    "100401": {
+        "name": "[Formula R] Maruzensky",
+        "description": "Extracted from master.mdb"
+    },
+    "100411": {
+        "name": "Skill ID 100411",
+        "description": "Extracted from master.mdb"
+    },
+    "100421": {
+        "name": "Skill ID 100421",
+        "description": "Extracted from master.mdb"
+    },
+    "100441": {
+        "name": "Skill ID 100441",
+        "description": "Extracted from master.mdb"
+    },
+    "100451": {
+        "name": "Skill ID 100451",
+        "description": "Extracted from master.mdb"
+    },
+    "100461": {
+        "name": "Skill ID 100461",
+        "description": "Extracted from master.mdb"
+    },
+    "100481": {
+        "name": "Skill ID 100481",
+        "description": "Extracted from master.mdb"
+    },
+    "100501": {
+        "name": "[Shooting Star Revue] Fuji Kiseki",
+        "description": "Extracted from master.mdb"
+    },
+    "100511": {
+        "name": "Skill ID 100511",
+        "description": "Extracted from master.mdb"
+    },
+    "100521": {
+        "name": "Skill ID 100521",
+        "description": "Extracted from master.mdb"
+    },
+    "100531": {
+        "name": "Skill ID 100531",
+        "description": "Extracted from master.mdb"
+    },
+    "100561": {
+        "name": "Skill ID 100561",
+        "description": "Extracted from master.mdb"
+    },
+    "100581": {
+        "name": "Skill ID 100581",
+        "description": "Extracted from master.mdb"
+    },
+    "100591": {
+        "name": "Skill ID 100591",
+        "description": "Extracted from master.mdb"
+    },
+    "100601": {
+        "name": "[Starlight Beat] Oguri Cap",
+        "description": "Extracted from master.mdb"
+    },
+    "100611": {
+        "name": "Skill ID 100611",
+        "description": "Extracted from master.mdb"
+    },
+    "100621": {
+        "name": "Skill ID 100621",
+        "description": "Extracted from master.mdb"
+    },
+    "100641": {
+        "name": "Skill ID 100641",
+        "description": "Extracted from master.mdb"
+    },
+    "100671": {
+        "name": "Skill ID 100671",
+        "description": "Extracted from master.mdb"
+    },
+    "100681": {
+        "name": "Skill ID 100681",
+        "description": "Extracted from master.mdb"
+    },
+    "100691": {
+        "name": "Skill ID 100691",
+        "description": "Extracted from master.mdb"
+    },
+    "100711": {
+        "name": "Skill ID 100711",
+        "description": "Extracted from master.mdb"
+    },
+    "100721": {
+        "name": "Skill ID 100721",
+        "description": "Extracted from master.mdb"
+    },
+    "100741": {
+        "name": "Skill ID 100741",
+        "description": "Extracted from master.mdb"
+    },
+    "100981": {
+        "name": "Skill ID 100981",
+        "description": "Extracted from master.mdb"
+    },
+    "100991": {
+        "name": "Skill ID 100991",
+        "description": "Extracted from master.mdb"
+    },
+    "110011": {
+        "name": "Skill ID 110011",
+        "description": "Extracted from master.mdb"
+    },
+    "110031": {
+        "name": "Skill ID 110031",
+        "description": "Extracted from master.mdb"
+    },
+    "110041": {
+        "name": "Skill ID 110041",
+        "description": "Extracted from master.mdb"
+    },
+    "110051": {
+        "name": "Skill ID 110051",
+        "description": "Extracted from master.mdb"
+    },
+    "110061": {
+        "name": "Skill ID 110061",
+        "description": "Extracted from master.mdb"
+    },
+    "110071": {
+        "name": "Skill ID 110071",
+        "description": "Extracted from master.mdb"
+    },
+    "110101": {
+        "name": "Skill ID 110101",
+        "description": "Extracted from master.mdb"
+    },
+    "110111": {
+        "name": "Skill ID 110111",
+        "description": "Extracted from master.mdb"
+    },
+    "110131": {
+        "name": "Skill ID 110131",
+        "description": "Extracted from master.mdb"
+    },
+    "110141": {
+        "name": "Skill ID 110141",
+        "description": "Extracted from master.mdb"
+    },
+    "110151": {
+        "name": "Skill ID 110151",
+        "description": "Extracted from master.mdb"
+    },
+    "110171": {
+        "name": "Skill ID 110171",
+        "description": "Extracted from master.mdb"
+    },
+    "110181": {
+        "name": "Skill ID 110181",
+        "description": "Extracted from master.mdb"
+    },
+    "110201": {
+        "name": "Skill ID 110201",
+        "description": "Extracted from master.mdb"
+    },
+    "110221": {
+        "name": "Skill ID 110221",
+        "description": "Extracted from master.mdb"
+    },
+    "110231": {
+        "name": "Skill ID 110231",
+        "description": "Extracted from master.mdb"
+    },
+    "110241": {
+        "name": "Skill ID 110241",
+        "description": "Extracted from master.mdb"
+    },
+    "110261": {
+        "name": "Skill ID 110261",
+        "description": "Extracted from master.mdb"
+    },
+    "110301": {
+        "name": "Skill ID 110301",
+        "description": "Extracted from master.mdb"
+    },
+    "110371": {
+        "name": "Skill ID 110371",
+        "description": "Extracted from master.mdb"
+    },
+    "110381": {
+        "name": "Skill ID 110381",
+        "description": "Extracted from master.mdb"
+    },
+    "110401": {
+        "name": "[Dragon Rising] Katsuragi Ace",
+        "description": "Extracted from master.mdb"
+    },
+    "110451": {
+        "name": "Skill ID 110451",
+        "description": "Extracted from master.mdb"
+    },
+    "110461": {
+        "name": "Skill ID 110461",
+        "description": "Extracted from master.mdb"
+    },
+    "110521": {
+        "name": "Skill ID 110521",
+        "description": "Extracted from master.mdb"
+    },
+    "110561": {
+        "name": "Skill ID 110561",
+        "description": "Extracted from master.mdb"
+    },
+    "110591": {
+        "name": "Skill ID 110591",
+        "description": "Extracted from master.mdb"
+    },
+    "110601": {
+        "name": "[Miracle Maker] Hishi Miracle",
+        "description": "Extracted from master.mdb"
+    },
+    "110611": {
+        "name": "Skill ID 110611",
+        "description": "Extracted from master.mdb"
+    },
+    "120011": {
+        "name": "Skill ID 120011",
+        "description": "Extracted from master.mdb"
+    },
+    "120131": {
+        "name": "Skill ID 120131",
+        "description": "Extracted from master.mdb"
+    },
+    "200011": {
+        "name": "Skill ID 200011",
+        "description": "Extracted from master.mdb"
+    },
+    "200012": {
+        "name": "Skill ID 200012",
+        "description": "Extracted from master.mdb"
+    },
+    "200013": {
+        "name": "Skill ID 200013",
+        "description": "Extracted from master.mdb"
+    },
+    "200014": {
+        "name": "Skill ID 200014",
+        "description": "Extracted from master.mdb"
+    },
+    "200021": {
+        "name": "Skill ID 200021",
+        "description": "Extracted from master.mdb"
+    },
+    "200022": {
+        "name": "Skill ID 200022",
+        "description": "Extracted from master.mdb"
+    },
+    "200023": {
+        "name": "Skill ID 200023",
+        "description": "Extracted from master.mdb"
+    },
+    "200031": {
+        "name": "Skill ID 200031",
+        "description": "Extracted from master.mdb"
+    },
+    "200032": {
+        "name": "Skill ID 200032",
+        "description": "Extracted from master.mdb"
+    },
+    "200033": {
+        "name": "Skill ID 200033",
+        "description": "Extracted from master.mdb"
+    },
+    "200041": {
+        "name": "Skill ID 200041",
+        "description": "Extracted from master.mdb"
+    },
+    "200042": {
+        "name": "Skill ID 200042",
+        "description": "Extracted from master.mdb"
+    },
+    "200043": {
+        "name": "Skill ID 200043",
+        "description": "Extracted from master.mdb"
+    },
+    "200051": {
+        "name": "Skill ID 200051",
+        "description": "Extracted from master.mdb"
+    },
+    "200052": {
+        "name": "Skill ID 200052",
+        "description": "Extracted from master.mdb"
+    },
+    "200053": {
+        "name": "Skill ID 200053",
+        "description": "Extracted from master.mdb"
+    },
+    "200061": {
+        "name": "Skill ID 200061",
+        "description": "Extracted from master.mdb"
+    },
+    "200062": {
+        "name": "Skill ID 200062",
+        "description": "Extracted from master.mdb"
+    },
+    "200063": {
+        "name": "Skill ID 200063",
+        "description": "Extracted from master.mdb"
+    },
+    "200064": {
+        "name": "Skill ID 200064",
+        "description": "Extracted from master.mdb"
+    },
+    "200071": {
+        "name": "Skill ID 200071",
+        "description": "Extracted from master.mdb"
+    },
+    "200072": {
+        "name": "Skill ID 200072",
+        "description": "Extracted from master.mdb"
+    },
+    "200073": {
+        "name": "Skill ID 200073",
+        "description": "Extracted from master.mdb"
+    },
+    "200081": {
+        "name": "Skill ID 200081",
+        "description": "Extracted from master.mdb"
+    },
+    "200082": {
+        "name": "Skill ID 200082",
+        "description": "Extracted from master.mdb"
+    },
+    "200083": {
+        "name": "Skill ID 200083",
+        "description": "Extracted from master.mdb"
+    },
+    "200091": {
+        "name": "Skill ID 200091",
+        "description": "Extracted from master.mdb"
+    },
+    "200092": {
+        "name": "Skill ID 200092",
+        "description": "Extracted from master.mdb"
+    },
+    "200093": {
+        "name": "Skill ID 200093",
+        "description": "Extracted from master.mdb"
+    },
+    "200101": {
+        "name": "Skill ID 200101",
+        "description": "Extracted from master.mdb"
+    },
+    "200102": {
+        "name": "Skill ID 200102",
+        "description": "Extracted from master.mdb"
+    },
+    "200103": {
+        "name": "Skill ID 200103",
+        "description": "Extracted from master.mdb"
+    },
+    "200111": {
+        "name": "Skill ID 200111",
+        "description": "Extracted from master.mdb"
+    },
+    "200112": {
+        "name": "Skill ID 200112",
+        "description": "Extracted from master.mdb"
+    },
+    "200113": {
+        "name": "Skill ID 200113",
+        "description": "Extracted from master.mdb"
+    },
+    "200121": {
+        "name": "Skill ID 200121",
+        "description": "Extracted from master.mdb"
+    },
+    "200122": {
+        "name": "Skill ID 200122",
+        "description": "Extracted from master.mdb"
+    },
+    "200123": {
+        "name": "Skill ID 200123",
+        "description": "Extracted from master.mdb"
+    },
+    "200131": {
+        "name": "Skill ID 200131",
+        "description": "Extracted from master.mdb"
+    },
+    "200132": {
+        "name": "Skill ID 200132",
+        "description": "Extracted from master.mdb"
+    },
+    "200133": {
+        "name": "Skill ID 200133",
+        "description": "Extracted from master.mdb"
+    },
+    "200141": {
+        "name": "Skill ID 200141",
+        "description": "Extracted from master.mdb"
+    },
+    "200142": {
+        "name": "Skill ID 200142",
+        "description": "Extracted from master.mdb"
+    },
+    "200143": {
+        "name": "Skill ID 200143",
+        "description": "Extracted from master.mdb"
+    },
+    "200151": {
+        "name": "Skill ID 200151",
+        "description": "Extracted from master.mdb"
+    },
+    "200152": {
+        "name": "Skill ID 200152",
+        "description": "Extracted from master.mdb"
+    },
+    "200153": {
+        "name": "Skill ID 200153",
+        "description": "Extracted from master.mdb"
+    },
+    "200154": {
+        "name": "Skill ID 200154",
+        "description": "Extracted from master.mdb"
+    },
+    "200161": {
+        "name": "Skill ID 200161",
+        "description": "Extracted from master.mdb"
+    },
+    "200162": {
+        "name": "Skill ID 200162",
+        "description": "Extracted from master.mdb"
+    },
+    "200163": {
+        "name": "Skill ID 200163",
+        "description": "Extracted from master.mdb"
+    },
+    "200171": {
+        "name": "Skill ID 200171",
+        "description": "Extracted from master.mdb"
+    },
+    "200172": {
+        "name": "Skill ID 200172",
+        "description": "Extracted from master.mdb"
+    },
+    "200173": {
+        "name": "Skill ID 200173",
+        "description": "Extracted from master.mdb"
+    },
+    "200174": {
+        "name": "Skill ID 200174",
+        "description": "Extracted from master.mdb"
+    },
+    "200181": {
+        "name": "Skill ID 200181",
+        "description": "Extracted from master.mdb"
+    },
+    "200182": {
+        "name": "Skill ID 200182",
+        "description": "Extracted from master.mdb"
+    },
+    "200183": {
+        "name": "Skill ID 200183",
+        "description": "Extracted from master.mdb"
+    },
+    "200191": {
+        "name": "Skill ID 200191",
+        "description": "Extracted from master.mdb"
+    },
+    "200192": {
+        "name": "Skill ID 200192",
+        "description": "Extracted from master.mdb"
+    },
+    "200193": {
+        "name": "Skill ID 200193",
+        "description": "Extracted from master.mdb"
+    },
+    "200194": {
+        "name": "Skill ID 200194",
+        "description": "Extracted from master.mdb"
+    },
+    "200201": {
+        "name": "Skill ID 200201",
+        "description": "Extracted from master.mdb"
+    },
+    "200202": {
+        "name": "Skill ID 200202",
+        "description": "Extracted from master.mdb"
+    },
+    "200203": {
+        "name": "Skill ID 200203",
+        "description": "Extracted from master.mdb"
+    },
+    "200211": {
+        "name": "Skill ID 200211",
+        "description": "Extracted from master.mdb"
+    },
+    "200212": {
+        "name": "Skill ID 200212",
+        "description": "Extracted from master.mdb"
+    },
+    "200221": {
+        "name": "Skill ID 200221",
+        "description": "Extracted from master.mdb"
+    },
+    "200222": {
+        "name": "Skill ID 200222",
+        "description": "Extracted from master.mdb"
+    },
+    "200231": {
+        "name": "Skill ID 200231",
+        "description": "Extracted from master.mdb"
+    },
+    "200232": {
+        "name": "Skill ID 200232",
+        "description": "Extracted from master.mdb"
+    },
+    "200233": {
+        "name": "Skill ID 200233",
+        "description": "Extracted from master.mdb"
+    },
+    "200241": {
+        "name": "Skill ID 200241",
+        "description": "Extracted from master.mdb"
+    },
+    "200242": {
+        "name": "Skill ID 200242",
+        "description": "Extracted from master.mdb"
+    },
+    "200251": {
+        "name": "Skill ID 200251",
+        "description": "Extracted from master.mdb"
+    },
+    "200252": {
+        "name": "Skill ID 200252",
+        "description": "Extracted from master.mdb"
+    },
+    "200253": {
+        "name": "Skill ID 200253",
+        "description": "Extracted from master.mdb"
+    },
+    "200261": {
+        "name": "Skill ID 200261",
+        "description": "Extracted from master.mdb"
+    },
+    "200262": {
+        "name": "Skill ID 200262",
+        "description": "Extracted from master.mdb"
+    },
+    "200263": {
+        "name": "Skill ID 200263",
+        "description": "Extracted from master.mdb"
+    },
+    "200271": {
+        "name": "Skill ID 200271",
+        "description": "Extracted from master.mdb"
+    },
+    "200272": {
+        "name": "Skill ID 200272",
+        "description": "Extracted from master.mdb"
+    },
+    "200281": {
+        "name": "Skill ID 200281",
+        "description": "Extracted from master.mdb"
+    },
+    "200282": {
+        "name": "Skill ID 200282",
+        "description": "Extracted from master.mdb"
+    },
+    "200283": {
+        "name": "Skill ID 200283",
+        "description": "Extracted from master.mdb"
+    },
+    "200291": {
+        "name": "Skill ID 200291",
+        "description": "Extracted from master.mdb"
+    },
+    "200292": {
+        "name": "Skill ID 200292",
+        "description": "Extracted from master.mdb"
+    },
+    "200301": {
+        "name": "Skill ID 200301",
+        "description": "Extracted from master.mdb"
+    },
+    "200302": {
+        "name": "Skill ID 200302",
+        "description": "Extracted from master.mdb"
+    },
+    "200311": {
+        "name": "Skill ID 200311",
+        "description": "Extracted from master.mdb"
+    },
+    "200321": {
+        "name": "Skill ID 200321",
+        "description": "Extracted from master.mdb"
+    },
+    "200331": {
+        "name": "Skill ID 200331",
+        "description": "Extracted from master.mdb"
+    },
+    "200332": {
+        "name": "Skill ID 200332",
+        "description": "Extracted from master.mdb"
+    },
+    "200333": {
+        "name": "Skill ID 200333",
+        "description": "Extracted from master.mdb"
+    },
+    "200341": {
+        "name": "Skill ID 200341",
+        "description": "Extracted from master.mdb"
+    },
+    "200342": {
+        "name": "Skill ID 200342",
+        "description": "Extracted from master.mdb"
+    },
+    "200343": {
+        "name": "Skill ID 200343",
+        "description": "Extracted from master.mdb"
+    },
+    "200351": {
+        "name": "Skill ID 200351",
+        "description": "Extracted from master.mdb"
+    },
+    "200352": {
+        "name": "Skill ID 200352",
+        "description": "Extracted from master.mdb"
+    },
+    "200353": {
+        "name": "Skill ID 200353",
+        "description": "Extracted from master.mdb"
+    },
+    "200361": {
+        "name": "Skill ID 200361",
+        "description": "Extracted from master.mdb"
+    },
+    "200362": {
+        "name": "Skill ID 200362",
+        "description": "Extracted from master.mdb"
+    },
+    "200371": {
+        "name": "Skill ID 200371",
+        "description": "Extracted from master.mdb"
+    },
+    "200372": {
+        "name": "Skill ID 200372",
+        "description": "Extracted from master.mdb"
+    },
+    "200381": {
+        "name": "Skill ID 200381",
+        "description": "Extracted from master.mdb"
+    },
+    "200382": {
+        "name": "Skill ID 200382",
+        "description": "Extracted from master.mdb"
+    },
+    "200391": {
+        "name": "Skill ID 200391",
+        "description": "Extracted from master.mdb"
+    },
+    "200401": {
+        "name": "Skill ID 200401",
+        "description": "Extracted from master.mdb"
+    },
+    "200411": {
+        "name": "Skill ID 200411",
+        "description": "Extracted from master.mdb"
+    },
+    "200421": {
+        "name": "Skill ID 200421",
+        "description": "Extracted from master.mdb"
+    },
+    "200431": {
+        "name": "Skill ID 200431",
+        "description": "Extracted from master.mdb"
+    },
+    "200432": {
+        "name": "Skill ID 200432",
+        "description": "Extracted from master.mdb"
+    },
+    "200433": {
+        "name": "Skill ID 200433",
+        "description": "Extracted from master.mdb"
+    },
+    "200441": {
+        "name": "Skill ID 200441",
+        "description": "Extracted from master.mdb"
+    },
+    "200442": {
+        "name": "Skill ID 200442",
+        "description": "Extracted from master.mdb"
+    },
+    "200451": {
+        "name": "Skill ID 200451",
+        "description": "Extracted from master.mdb"
+    },
+    "200452": {
+        "name": "Skill ID 200452",
+        "description": "Extracted from master.mdb"
+    },
+    "200461": {
+        "name": "Skill ID 200461",
+        "description": "Extracted from master.mdb"
+    },
+    "200462": {
+        "name": "Skill ID 200462",
+        "description": "Extracted from master.mdb"
+    },
+    "200471": {
+        "name": "Skill ID 200471",
+        "description": "Extracted from master.mdb"
+    },
+    "200472": {
+        "name": "Skill ID 200472",
+        "description": "Extracted from master.mdb"
+    },
+    "200481": {
+        "name": "Skill ID 200481",
+        "description": "Extracted from master.mdb"
+    },
+    "200482": {
+        "name": "Skill ID 200482",
+        "description": "Extracted from master.mdb"
+    },
+    "200491": {
+        "name": "Skill ID 200491",
+        "description": "Extracted from master.mdb"
+    },
+    "200492": {
+        "name": "Skill ID 200492",
+        "description": "Extracted from master.mdb"
+    },
+    "200501": {
+        "name": "Skill ID 200501",
+        "description": "Extracted from master.mdb"
+    },
+    "200502": {
+        "name": "Skill ID 200502",
+        "description": "Extracted from master.mdb"
+    },
+    "200511": {
+        "name": "Skill ID 200511",
+        "description": "Extracted from master.mdb"
+    },
+    "200512": {
+        "name": "Skill ID 200512",
+        "description": "Extracted from master.mdb"
+    },
+    "200521": {
+        "name": "Skill ID 200521",
+        "description": "Extracted from master.mdb"
+    },
+    "200531": {
+        "name": "Skill ID 200531",
+        "description": "Extracted from master.mdb"
+    },
+    "200532": {
+        "name": "Skill ID 200532",
+        "description": "Extracted from master.mdb"
+    },
+    "200541": {
+        "name": "Skill ID 200541",
+        "description": "Extracted from master.mdb"
+    },
+    "200542": {
+        "name": "Skill ID 200542",
+        "description": "Extracted from master.mdb"
+    },
+    "200551": {
+        "name": "Skill ID 200551",
+        "description": "Extracted from master.mdb"
+    },
+    "200552": {
+        "name": "Skill ID 200552",
+        "description": "Extracted from master.mdb"
+    },
+    "200561": {
+        "name": "Skill ID 200561",
+        "description": "Extracted from master.mdb"
+    },
+    "200562": {
+        "name": "Skill ID 200562",
+        "description": "Extracted from master.mdb"
+    },
+    "200571": {
+        "name": "Skill ID 200571",
+        "description": "Extracted from master.mdb"
+    },
+    "200572": {
+        "name": "Skill ID 200572",
+        "description": "Extracted from master.mdb"
+    },
+    "200581": {
+        "name": "Skill ID 200581",
+        "description": "Extracted from master.mdb"
+    },
+    "200582": {
+        "name": "Skill ID 200582",
+        "description": "Extracted from master.mdb"
+    },
+    "200591": {
+        "name": "Skill ID 200591",
+        "description": "Extracted from master.mdb"
+    },
+    "200592": {
+        "name": "Skill ID 200592",
+        "description": "Extracted from master.mdb"
+    },
+    "200601": {
+        "name": "Skill ID 200601",
+        "description": "Extracted from master.mdb"
+    },
+    "200602": {
+        "name": "Skill ID 200602",
+        "description": "Extracted from master.mdb"
+    },
+    "200611": {
+        "name": "Skill ID 200611",
+        "description": "Extracted from master.mdb"
+    },
+    "200612": {
+        "name": "Skill ID 200612",
+        "description": "Extracted from master.mdb"
+    },
+    "200621": {
+        "name": "Skill ID 200621",
+        "description": "Extracted from master.mdb"
+    },
+    "200622": {
+        "name": "Skill ID 200622",
+        "description": "Extracted from master.mdb"
+    },
+    "200631": {
+        "name": "Skill ID 200631",
+        "description": "Extracted from master.mdb"
+    },
+    "200632": {
+        "name": "Skill ID 200632",
+        "description": "Extracted from master.mdb"
+    },
+    "200641": {
+        "name": "Skill ID 200641",
+        "description": "Extracted from master.mdb"
+    },
+    "200642": {
+        "name": "Skill ID 200642",
+        "description": "Extracted from master.mdb"
+    },
+    "200651": {
+        "name": "Skill ID 200651",
+        "description": "Extracted from master.mdb"
+    },
+    "200652": {
+        "name": "Skill ID 200652",
+        "description": "Extracted from master.mdb"
+    },
+    "200662": {
+        "name": "Skill ID 200662",
+        "description": "Extracted from master.mdb"
+    },
+    "200671": {
+        "name": "Skill ID 200671",
+        "description": "Extracted from master.mdb"
+    },
+    "200672": {
+        "name": "Skill ID 200672",
+        "description": "Extracted from master.mdb"
+    },
+    "200681": {
+        "name": "Skill ID 200681",
+        "description": "Extracted from master.mdb"
+    },
+    "200682": {
+        "name": "Skill ID 200682",
+        "description": "Extracted from master.mdb"
+    },
+    "200691": {
+        "name": "Skill ID 200691",
+        "description": "Extracted from master.mdb"
+    },
+    "200692": {
+        "name": "Skill ID 200692",
+        "description": "Extracted from master.mdb"
+    },
+    "200701": {
+        "name": "Skill ID 200701",
+        "description": "Extracted from master.mdb"
+    },
+    "200702": {
+        "name": "Skill ID 200702",
+        "description": "Extracted from master.mdb"
+    },
+    "200711": {
+        "name": "Skill ID 200711",
+        "description": "Extracted from master.mdb"
+    },
+    "200712": {
+        "name": "Skill ID 200712",
+        "description": "Extracted from master.mdb"
+    },
+    "200721": {
+        "name": "Skill ID 200721",
+        "description": "Extracted from master.mdb"
+    },
+    "200722": {
+        "name": "Skill ID 200722",
+        "description": "Extracted from master.mdb"
+    },
+    "200731": {
+        "name": "Skill ID 200731",
+        "description": "Extracted from master.mdb"
+    },
+    "200732": {
+        "name": "Skill ID 200732",
+        "description": "Extracted from master.mdb"
+    },
+    "200741": {
+        "name": "Skill ID 200741",
+        "description": "Extracted from master.mdb"
+    },
+    "200742": {
+        "name": "Skill ID 200742",
+        "description": "Extracted from master.mdb"
+    },
+    "200751": {
+        "name": "Skill ID 200751",
+        "description": "Extracted from master.mdb"
+    },
+    "200752": {
+        "name": "Skill ID 200752",
+        "description": "Extracted from master.mdb"
+    },
+    "200761": {
+        "name": "Skill ID 200761",
+        "description": "Extracted from master.mdb"
+    },
+    "200762": {
+        "name": "Skill ID 200762",
+        "description": "Extracted from master.mdb"
+    },
+    "200771": {
+        "name": "Skill ID 200771",
+        "description": "Extracted from master.mdb"
+    },
+    "200772": {
+        "name": "Skill ID 200772",
+        "description": "Extracted from master.mdb"
+    },
+    "200781": {
+        "name": "Skill ID 200781",
+        "description": "Extracted from master.mdb"
+    },
+    "200791": {
+        "name": "Skill ID 200791",
+        "description": "Extracted from master.mdb"
+    },
+    "200801": {
+        "name": "Skill ID 200801",
+        "description": "Extracted from master.mdb"
+    },
+    "200811": {
+        "name": "Skill ID 200811",
+        "description": "Extracted from master.mdb"
+    },
+    "200821": {
+        "name": "Skill ID 200821",
+        "description": "Extracted from master.mdb"
+    },
+    "200831": {
+        "name": "Skill ID 200831",
+        "description": "Extracted from master.mdb"
+    },
+    "200841": {
+        "name": "Skill ID 200841",
+        "description": "Extracted from master.mdb"
+    },
+    "200851": {
+        "name": "Skill ID 200851",
+        "description": "Extracted from master.mdb"
+    },
+    "200861": {
+        "name": "Skill ID 200861",
+        "description": "Extracted from master.mdb"
+    },
+    "200871": {
+        "name": "Skill ID 200871",
+        "description": "Extracted from master.mdb"
+    },
+    "200881": {
+        "name": "Skill ID 200881",
+        "description": "Extracted from master.mdb"
+    },
+    "200891": {
+        "name": "Skill ID 200891",
+        "description": "Extracted from master.mdb"
+    },
+    "200901": {
+        "name": "Skill ID 200901",
+        "description": "Extracted from master.mdb"
+    },
+    "200911": {
+        "name": "Skill ID 200911",
+        "description": "Extracted from master.mdb"
+    },
+    "200921": {
+        "name": "Skill ID 200921",
+        "description": "Extracted from master.mdb"
+    },
+    "200931": {
+        "name": "Skill ID 200931",
+        "description": "Extracted from master.mdb"
+    },
+    "200941": {
+        "name": "Skill ID 200941",
+        "description": "Extracted from master.mdb"
+    },
+    "200951": {
+        "name": "Skill ID 200951",
+        "description": "Extracted from master.mdb"
+    },
+    "200952": {
+        "name": "Skill ID 200952",
+        "description": "Extracted from master.mdb"
+    },
+    "200953": {
+        "name": "Skill ID 200953",
+        "description": "Extracted from master.mdb"
+    },
+    "200961": {
+        "name": "Skill ID 200961",
+        "description": "Extracted from master.mdb"
+    },
+    "200962": {
+        "name": "Skill ID 200962",
+        "description": "Extracted from master.mdb"
+    },
+    "200963": {
+        "name": "Skill ID 200963",
+        "description": "Extracted from master.mdb"
+    },
+    "200971": {
+        "name": "Skill ID 200971",
+        "description": "Extracted from master.mdb"
+    },
+    "200972": {
+        "name": "Skill ID 200972",
+        "description": "Extracted from master.mdb"
+    },
+    "200981": {
+        "name": "Skill ID 200981",
+        "description": "Extracted from master.mdb"
+    },
+    "200982": {
+        "name": "Skill ID 200982",
+        "description": "Extracted from master.mdb"
+    },
+    "200991": {
+        "name": "Skill ID 200991",
+        "description": "Extracted from master.mdb"
+    },
+    "200992": {
+        "name": "Skill ID 200992",
+        "description": "Extracted from master.mdb"
+    },
+    "201001": {
+        "name": "Skill ID 201001",
+        "description": "Extracted from master.mdb"
+    },
+    "201002": {
+        "name": "Skill ID 201002",
+        "description": "Extracted from master.mdb"
+    },
+    "201011": {
+        "name": "Skill ID 201011",
+        "description": "Extracted from master.mdb"
+    },
+    "201012": {
+        "name": "Skill ID 201012",
+        "description": "Extracted from master.mdb"
+    },
+    "201021": {
+        "name": "Skill ID 201021",
+        "description": "Extracted from master.mdb"
+    },
+    "201022": {
+        "name": "Skill ID 201022",
+        "description": "Extracted from master.mdb"
+    },
+    "201031": {
+        "name": "Skill ID 201031",
+        "description": "Extracted from master.mdb"
+    },
+    "201032": {
+        "name": "Skill ID 201032",
+        "description": "Extracted from master.mdb"
+    },
+    "201041": {
+        "name": "Skill ID 201041",
+        "description": "Extracted from master.mdb"
+    },
+    "201042": {
+        "name": "Skill ID 201042",
+        "description": "Extracted from master.mdb"
+    },
+    "201051": {
+        "name": "Skill ID 201051",
+        "description": "Extracted from master.mdb"
+    },
+    "201052": {
+        "name": "Skill ID 201052",
+        "description": "Extracted from master.mdb"
+    },
+    "201061": {
+        "name": "Skill ID 201061",
+        "description": "Extracted from master.mdb"
+    },
+    "201062": {
+        "name": "Skill ID 201062",
+        "description": "Extracted from master.mdb"
+    },
+    "201071": {
+        "name": "Skill ID 201071",
+        "description": "Extracted from master.mdb"
+    },
+    "201072": {
+        "name": "Skill ID 201072",
+        "description": "Extracted from master.mdb"
+    },
+    "201081": {
+        "name": "Skill ID 201081",
+        "description": "Extracted from master.mdb"
+    },
+    "201082": {
+        "name": "Skill ID 201082",
+        "description": "Extracted from master.mdb"
+    },
+    "201091": {
+        "name": "Skill ID 201091",
+        "description": "Extracted from master.mdb"
+    },
+    "201092": {
+        "name": "Skill ID 201092",
+        "description": "Extracted from master.mdb"
+    },
+    "201101": {
+        "name": "Skill ID 201101",
+        "description": "Extracted from master.mdb"
+    },
+    "201102": {
+        "name": "Skill ID 201102",
+        "description": "Extracted from master.mdb"
+    },
+    "201103": {
+        "name": "Skill ID 201103",
+        "description": "Extracted from master.mdb"
+    },
+    "201111": {
+        "name": "Skill ID 201111",
+        "description": "Extracted from master.mdb"
+    },
+    "201112": {
+        "name": "Skill ID 201112",
+        "description": "Extracted from master.mdb"
+    },
+    "201113": {
+        "name": "Skill ID 201113",
+        "description": "Extracted from master.mdb"
+    },
+    "201121": {
+        "name": "Skill ID 201121",
+        "description": "Extracted from master.mdb"
+    },
+    "201122": {
+        "name": "Skill ID 201122",
+        "description": "Extracted from master.mdb"
+    },
+    "201131": {
+        "name": "Skill ID 201131",
+        "description": "Extracted from master.mdb"
+    },
+    "201132": {
+        "name": "Skill ID 201132",
+        "description": "Extracted from master.mdb"
+    },
+    "201141": {
+        "name": "Skill ID 201141",
+        "description": "Extracted from master.mdb"
+    },
+    "201142": {
+        "name": "Skill ID 201142",
+        "description": "Extracted from master.mdb"
+    },
+    "201151": {
+        "name": "Skill ID 201151",
+        "description": "Extracted from master.mdb"
+    },
+    "201152": {
+        "name": "Skill ID 201152",
+        "description": "Extracted from master.mdb"
+    },
+    "201161": {
+        "name": "Skill ID 201161",
+        "description": "Extracted from master.mdb"
+    },
+    "201162": {
+        "name": "Skill ID 201162",
+        "description": "Extracted from master.mdb"
+    },
+    "201171": {
+        "name": "Skill ID 201171",
+        "description": "Extracted from master.mdb"
+    },
+    "201172": {
+        "name": "Skill ID 201172",
+        "description": "Extracted from master.mdb"
+    },
+    "201173": {
+        "name": "Skill ID 201173",
+        "description": "Extracted from master.mdb"
+    },
+    "201181": {
+        "name": "Skill ID 201181",
+        "description": "Extracted from master.mdb"
+    },
+    "201182": {
+        "name": "Skill ID 201182",
+        "description": "Extracted from master.mdb"
+    },
+    "201191": {
+        "name": "Skill ID 201191",
+        "description": "Extracted from master.mdb"
+    },
+    "201192": {
+        "name": "Skill ID 201192",
+        "description": "Extracted from master.mdb"
+    },
+    "201201": {
+        "name": "Skill ID 201201",
+        "description": "Extracted from master.mdb"
+    },
+    "201202": {
+        "name": "Skill ID 201202",
+        "description": "Extracted from master.mdb"
+    },
+    "201211": {
+        "name": "Skill ID 201211",
+        "description": "Extracted from master.mdb"
+    },
+    "201212": {
+        "name": "Skill ID 201212",
+        "description": "Extracted from master.mdb"
+    },
+    "201221": {
+        "name": "Skill ID 201221",
+        "description": "Extracted from master.mdb"
+    },
+    "201222": {
+        "name": "Skill ID 201222",
+        "description": "Extracted from master.mdb"
+    },
+    "201231": {
+        "name": "Skill ID 201231",
+        "description": "Extracted from master.mdb"
+    },
+    "201232": {
+        "name": "Skill ID 201232",
+        "description": "Extracted from master.mdb"
+    },
+    "201241": {
+        "name": "Skill ID 201241",
+        "description": "Extracted from master.mdb"
+    },
+    "201242": {
+        "name": "Skill ID 201242",
+        "description": "Extracted from master.mdb"
+    },
+    "201251": {
+        "name": "Skill ID 201251",
+        "description": "Extracted from master.mdb"
+    },
+    "201252": {
+        "name": "Skill ID 201252",
+        "description": "Extracted from master.mdb"
+    },
+    "201261": {
+        "name": "Skill ID 201261",
+        "description": "Extracted from master.mdb"
+    },
+    "201262": {
+        "name": "Skill ID 201262",
+        "description": "Extracted from master.mdb"
+    },
+    "201271": {
+        "name": "Skill ID 201271",
+        "description": "Extracted from master.mdb"
+    },
+    "201272": {
+        "name": "Skill ID 201272",
+        "description": "Extracted from master.mdb"
+    },
+    "201281": {
+        "name": "Skill ID 201281",
+        "description": "Extracted from master.mdb"
+    },
+    "201282": {
+        "name": "Skill ID 201282",
+        "description": "Extracted from master.mdb"
+    },
+    "201291": {
+        "name": "Skill ID 201291",
+        "description": "Extracted from master.mdb"
+    },
+    "201292": {
+        "name": "Skill ID 201292",
+        "description": "Extracted from master.mdb"
+    },
+    "201302": {
+        "name": "Skill ID 201302",
+        "description": "Extracted from master.mdb"
+    },
+    "201311": {
+        "name": "Skill ID 201311",
+        "description": "Extracted from master.mdb"
+    },
+    "201312": {
+        "name": "Skill ID 201312",
+        "description": "Extracted from master.mdb"
+    },
+    "201321": {
+        "name": "Skill ID 201321",
+        "description": "Extracted from master.mdb"
+    },
+    "201322": {
+        "name": "Skill ID 201322",
+        "description": "Extracted from master.mdb"
+    },
+    "201331": {
+        "name": "Skill ID 201331",
+        "description": "Extracted from master.mdb"
+    },
+    "201332": {
+        "name": "Skill ID 201332",
+        "description": "Extracted from master.mdb"
+    },
+    "201341": {
+        "name": "Skill ID 201341",
+        "description": "Extracted from master.mdb"
+    },
+    "201342": {
+        "name": "Skill ID 201342",
+        "description": "Extracted from master.mdb"
+    },
+    "201351": {
+        "name": "Skill ID 201351",
+        "description": "Extracted from master.mdb"
+    },
+    "201352": {
+        "name": "Skill ID 201352",
+        "description": "Extracted from master.mdb"
+    },
+    "201361": {
+        "name": "Skill ID 201361",
+        "description": "Extracted from master.mdb"
+    },
+    "201362": {
+        "name": "Skill ID 201362",
+        "description": "Extracted from master.mdb"
+    },
+    "201371": {
+        "name": "Skill ID 201371",
+        "description": "Extracted from master.mdb"
+    },
+    "201372": {
+        "name": "Skill ID 201372",
+        "description": "Extracted from master.mdb"
+    },
+    "201381": {
+        "name": "Skill ID 201381",
+        "description": "Extracted from master.mdb"
+    },
+    "201382": {
+        "name": "Skill ID 201382",
+        "description": "Extracted from master.mdb"
+    },
+    "201391": {
+        "name": "Skill ID 201391",
+        "description": "Extracted from master.mdb"
+    },
+    "201392": {
+        "name": "Skill ID 201392",
+        "description": "Extracted from master.mdb"
+    },
+    "201401": {
+        "name": "Skill ID 201401",
+        "description": "Extracted from master.mdb"
+    },
+    "201402": {
+        "name": "Skill ID 201402",
+        "description": "Extracted from master.mdb"
+    },
+    "201411": {
+        "name": "Skill ID 201411",
+        "description": "Extracted from master.mdb"
+    },
+    "201412": {
+        "name": "Skill ID 201412",
+        "description": "Extracted from master.mdb"
+    },
+    "201421": {
+        "name": "Skill ID 201421",
+        "description": "Extracted from master.mdb"
+    },
+    "201422": {
+        "name": "Skill ID 201422",
+        "description": "Extracted from master.mdb"
+    },
+    "201431": {
+        "name": "Skill ID 201431",
+        "description": "Extracted from master.mdb"
+    },
+    "201432": {
+        "name": "Skill ID 201432",
+        "description": "Extracted from master.mdb"
+    },
+    "201441": {
+        "name": "Skill ID 201441",
+        "description": "Extracted from master.mdb"
+    },
+    "201442": {
+        "name": "Skill ID 201442",
+        "description": "Extracted from master.mdb"
+    },
+    "201451": {
+        "name": "Skill ID 201451",
+        "description": "Extracted from master.mdb"
+    },
+    "201452": {
+        "name": "Skill ID 201452",
+        "description": "Extracted from master.mdb"
+    },
+    "201453": {
+        "name": "Skill ID 201453",
+        "description": "Extracted from master.mdb"
+    },
+    "201461": {
+        "name": "Skill ID 201461",
+        "description": "Extracted from master.mdb"
+    },
+    "201462": {
+        "name": "Skill ID 201462",
+        "description": "Extracted from master.mdb"
+    },
+    "201471": {
+        "name": "Skill ID 201471",
+        "description": "Extracted from master.mdb"
+    },
+    "201472": {
+        "name": "Skill ID 201472",
+        "description": "Extracted from master.mdb"
+    },
+    "201481": {
+        "name": "Skill ID 201481",
+        "description": "Extracted from master.mdb"
+    },
+    "201482": {
+        "name": "Skill ID 201482",
+        "description": "Extracted from master.mdb"
+    },
+    "201491": {
+        "name": "Skill ID 201491",
+        "description": "Extracted from master.mdb"
+    },
+    "201492": {
+        "name": "Skill ID 201492",
+        "description": "Extracted from master.mdb"
+    },
+    "201501": {
+        "name": "Skill ID 201501",
+        "description": "Extracted from master.mdb"
+    },
+    "201502": {
+        "name": "Skill ID 201502",
+        "description": "Extracted from master.mdb"
+    },
+    "201511": {
+        "name": "Skill ID 201511",
+        "description": "Extracted from master.mdb"
+    },
+    "201512": {
+        "name": "Skill ID 201512",
+        "description": "Extracted from master.mdb"
+    },
+    "201521": {
+        "name": "Skill ID 201521",
+        "description": "Extracted from master.mdb"
+    },
+    "201522": {
+        "name": "Skill ID 201522",
+        "description": "Extracted from master.mdb"
+    },
+    "201531": {
+        "name": "Skill ID 201531",
+        "description": "Extracted from master.mdb"
+    },
+    "201532": {
+        "name": "Skill ID 201532",
+        "description": "Extracted from master.mdb"
+    },
+    "201541": {
+        "name": "Skill ID 201541",
+        "description": "Extracted from master.mdb"
+    },
+    "201542": {
+        "name": "Skill ID 201542",
+        "description": "Extracted from master.mdb"
+    },
+    "201551": {
+        "name": "Skill ID 201551",
+        "description": "Extracted from master.mdb"
+    },
+    "201552": {
+        "name": "Skill ID 201552",
+        "description": "Extracted from master.mdb"
+    },
+    "201561": {
+        "name": "Skill ID 201561",
+        "description": "Extracted from master.mdb"
+    },
+    "201562": {
+        "name": "Skill ID 201562",
+        "description": "Extracted from master.mdb"
+    },
+    "201571": {
+        "name": "Skill ID 201571",
+        "description": "Extracted from master.mdb"
+    },
+    "201581": {
+        "name": "Skill ID 201581",
+        "description": "Extracted from master.mdb"
+    },
+    "201591": {
+        "name": "Skill ID 201591",
+        "description": "Extracted from master.mdb"
+    },
+    "201592": {
+        "name": "Skill ID 201592",
+        "description": "Extracted from master.mdb"
+    },
+    "201601": {
+        "name": "Skill ID 201601",
+        "description": "Extracted from master.mdb"
+    },
+    "201611": {
+        "name": "Skill ID 201611",
+        "description": "Extracted from master.mdb"
+    },
+    "201612": {
+        "name": "Skill ID 201612",
+        "description": "Extracted from master.mdb"
+    },
+    "201621": {
+        "name": "Skill ID 201621",
+        "description": "Extracted from master.mdb"
+    },
+    "201631": {
+        "name": "Skill ID 201631",
+        "description": "Extracted from master.mdb"
+    },
+    "201641": {
+        "name": "Skill ID 201641",
+        "description": "Extracted from master.mdb"
+    },
+    "201651": {
+        "name": "Skill ID 201651",
+        "description": "Extracted from master.mdb"
+    },
+    "201652": {
+        "name": "Skill ID 201652",
+        "description": "Extracted from master.mdb"
+    },
+    "201661": {
+        "name": "Skill ID 201661",
+        "description": "Extracted from master.mdb"
+    },
+    "201662": {
+        "name": "Skill ID 201662",
+        "description": "Extracted from master.mdb"
+    },
+    "201671": {
+        "name": "Skill ID 201671",
+        "description": "Extracted from master.mdb"
+    },
+    "201672": {
+        "name": "Skill ID 201672",
+        "description": "Extracted from master.mdb"
+    },
+    "201681": {
+        "name": "Skill ID 201681",
+        "description": "Extracted from master.mdb"
+    },
+    "201682": {
+        "name": "Skill ID 201682",
+        "description": "Extracted from master.mdb"
+    },
+    "201691": {
+        "name": "Skill ID 201691",
+        "description": "Extracted from master.mdb"
+    },
+    "201692": {
+        "name": "Skill ID 201692",
+        "description": "Extracted from master.mdb"
+    },
+    "201701": {
+        "name": "Skill ID 201701",
+        "description": "Extracted from master.mdb"
+    },
+    "201702": {
+        "name": "Skill ID 201702",
+        "description": "Extracted from master.mdb"
+    },
+    "201801": {
+        "name": "Skill ID 201801",
+        "description": "Extracted from master.mdb"
+    },
+    "201901": {
+        "name": "Skill ID 201901",
+        "description": "Extracted from master.mdb"
+    },
+    "201902": {
+        "name": "Skill ID 201902",
+        "description": "Extracted from master.mdb"
+    },
+    "202001": {
+        "name": "Skill ID 202001",
+        "description": "Extracted from master.mdb"
+    },
+    "202002": {
+        "name": "Skill ID 202002",
+        "description": "Extracted from master.mdb"
+    },
+    "202011": {
+        "name": "Skill ID 202011",
+        "description": "Extracted from master.mdb"
+    },
+    "202012": {
+        "name": "Skill ID 202012",
+        "description": "Extracted from master.mdb"
+    },
+    "202021": {
+        "name": "Skill ID 202021",
+        "description": "Extracted from master.mdb"
+    },
+    "202022": {
+        "name": "Skill ID 202022",
+        "description": "Extracted from master.mdb"
+    },
+    "202031": {
+        "name": "Skill ID 202031",
+        "description": "Extracted from master.mdb"
+    },
+    "202032": {
+        "name": "Skill ID 202032",
+        "description": "Extracted from master.mdb"
+    },
+    "202041": {
+        "name": "Skill ID 202041",
+        "description": "Extracted from master.mdb"
+    },
+    "202042": {
+        "name": "Skill ID 202042",
+        "description": "Extracted from master.mdb"
+    },
+    "202051": {
+        "name": "Skill ID 202051",
+        "description": "Extracted from master.mdb"
+    },
+    "202061": {
+        "name": "Skill ID 202061",
+        "description": "Extracted from master.mdb"
+    },
+    "202071": {
+        "name": "Skill ID 202071",
+        "description": "Extracted from master.mdb"
+    },
+    "202072": {
+        "name": "Skill ID 202072",
+        "description": "Extracted from master.mdb"
+    },
+    "202081": {
+        "name": "Skill ID 202081",
+        "description": "Extracted from master.mdb"
+    },
+    "202082": {
+        "name": "Skill ID 202082",
+        "description": "Extracted from master.mdb"
+    },
+    "202091": {
+        "name": "Skill ID 202091",
+        "description": "Extracted from master.mdb"
+    },
+    "202092": {
+        "name": "Skill ID 202092",
+        "description": "Extracted from master.mdb"
+    },
+    "202101": {
+        "name": "Skill ID 202101",
+        "description": "Extracted from master.mdb"
+    },
+    "202102": {
+        "name": "Skill ID 202102",
+        "description": "Extracted from master.mdb"
+    },
+    "202111": {
+        "name": "Skill ID 202111",
+        "description": "Extracted from master.mdb"
+    },
+    "202112": {
+        "name": "Skill ID 202112",
+        "description": "Extracted from master.mdb"
+    },
+    "202121": {
+        "name": "Skill ID 202121",
+        "description": "Extracted from master.mdb"
+    },
+    "202122": {
+        "name": "Skill ID 202122",
+        "description": "Extracted from master.mdb"
+    },
+    "202131": {
+        "name": "Skill ID 202131",
+        "description": "Extracted from master.mdb"
+    },
+    "202132": {
+        "name": "Skill ID 202132",
+        "description": "Extracted from master.mdb"
+    },
+    "202141": {
+        "name": "Skill ID 202141",
+        "description": "Extracted from master.mdb"
+    },
+    "202151": {
+        "name": "Skill ID 202151",
+        "description": "Extracted from master.mdb"
+    },
+    "202152": {
+        "name": "Skill ID 202152",
+        "description": "Extracted from master.mdb"
+    },
+    "202161": {
+        "name": "Skill ID 202161",
+        "description": "Extracted from master.mdb"
+    },
+    "202172": {
+        "name": "Skill ID 202172",
+        "description": "Extracted from master.mdb"
+    },
+    "202181": {
+        "name": "Skill ID 202181",
+        "description": "Extracted from master.mdb"
+    },
+    "202191": {
+        "name": "Skill ID 202191",
+        "description": "Extracted from master.mdb"
+    },
+    "202192": {
+        "name": "Skill ID 202192",
+        "description": "Extracted from master.mdb"
+    },
+    "202201": {
+        "name": "Skill ID 202201",
+        "description": "Extracted from master.mdb"
+    },
+    "202202": {
+        "name": "Skill ID 202202",
+        "description": "Extracted from master.mdb"
+    },
+    "202203": {
+        "name": "Skill ID 202203",
+        "description": "Extracted from master.mdb"
+    },
+    "202211": {
+        "name": "Skill ID 202211",
+        "description": "Extracted from master.mdb"
+    },
+    "202212": {
+        "name": "Skill ID 202212",
+        "description": "Extracted from master.mdb"
+    },
+    "202213": {
+        "name": "Skill ID 202213",
+        "description": "Extracted from master.mdb"
+    },
+    "202221": {
+        "name": "Skill ID 202221",
+        "description": "Extracted from master.mdb"
+    },
+    "202222": {
+        "name": "Skill ID 202222",
+        "description": "Extracted from master.mdb"
+    },
+    "202223": {
+        "name": "Skill ID 202223",
+        "description": "Extracted from master.mdb"
+    },
+    "202231": {
+        "name": "Skill ID 202231",
+        "description": "Extracted from master.mdb"
+    },
+    "202232": {
+        "name": "Skill ID 202232",
+        "description": "Extracted from master.mdb"
+    },
+    "202233": {
+        "name": "Skill ID 202233",
+        "description": "Extracted from master.mdb"
+    },
+    "202241": {
+        "name": "Skill ID 202241",
+        "description": "Extracted from master.mdb"
+    },
+    "202242": {
+        "name": "Skill ID 202242",
+        "description": "Extracted from master.mdb"
+    },
+    "202243": {
+        "name": "Skill ID 202243",
+        "description": "Extracted from master.mdb"
+    },
+    "202251": {
+        "name": "Skill ID 202251",
+        "description": "Extracted from master.mdb"
+    },
+    "202252": {
+        "name": "Skill ID 202252",
+        "description": "Extracted from master.mdb"
+    },
+    "202253": {
+        "name": "Skill ID 202253",
+        "description": "Extracted from master.mdb"
+    },
+    "202261": {
+        "name": "Skill ID 202261",
+        "description": "Extracted from master.mdb"
+    },
+    "202262": {
+        "name": "Skill ID 202262",
+        "description": "Extracted from master.mdb"
+    },
+    "202271": {
+        "name": "Skill ID 202271",
+        "description": "Extracted from master.mdb"
+    },
+    "202272": {
+        "name": "Skill ID 202272",
+        "description": "Extracted from master.mdb"
+    },
+    "202281": {
+        "name": "Skill ID 202281",
+        "description": "Extracted from master.mdb"
+    },
+    "202282": {
+        "name": "Skill ID 202282",
+        "description": "Extracted from master.mdb"
+    },
+    "202291": {
+        "name": "Skill ID 202291",
+        "description": "Extracted from master.mdb"
+    },
+    "202292": {
+        "name": "Skill ID 202292",
+        "description": "Extracted from master.mdb"
+    },
+    "202301": {
+        "name": "Skill ID 202301",
+        "description": "Extracted from master.mdb"
+    },
+    "202302": {
+        "name": "Skill ID 202302",
+        "description": "Extracted from master.mdb"
+    },
+    "202303": {
+        "name": "Skill ID 202303",
+        "description": "Extracted from master.mdb"
+    },
+    "202311": {
+        "name": "Skill ID 202311",
+        "description": "Extracted from master.mdb"
+    },
+    "202312": {
+        "name": "Skill ID 202312",
+        "description": "Extracted from master.mdb"
+    },
+    "202321": {
+        "name": "Skill ID 202321",
+        "description": "Extracted from master.mdb"
+    },
+    "202322": {
+        "name": "Skill ID 202322",
+        "description": "Extracted from master.mdb"
+    },
+    "202331": {
+        "name": "Skill ID 202331",
+        "description": "Extracted from master.mdb"
+    },
+    "202332": {
+        "name": "Skill ID 202332",
+        "description": "Extracted from master.mdb"
+    },
+    "202341": {
+        "name": "Skill ID 202341",
+        "description": "Extracted from master.mdb"
+    },
+    "202342": {
+        "name": "Skill ID 202342",
+        "description": "Extracted from master.mdb"
+    },
+    "202343": {
+        "name": "Skill ID 202343",
+        "description": "Extracted from master.mdb"
+    },
+    "202344": {
+        "name": "Skill ID 202344",
+        "description": "Extracted from master.mdb"
+    },
+    "202351": {
+        "name": "Skill ID 202351",
+        "description": "Extracted from master.mdb"
+    },
+    "202352": {
+        "name": "Skill ID 202352",
+        "description": "Extracted from master.mdb"
+    },
+    "202361": {
+        "name": "Skill ID 202361",
+        "description": "Extracted from master.mdb"
+    },
+    "202362": {
+        "name": "Skill ID 202362",
+        "description": "Extracted from master.mdb"
+    },
+    "202371": {
+        "name": "Skill ID 202371",
+        "description": "Extracted from master.mdb"
+    },
+    "202372": {
+        "name": "Skill ID 202372",
+        "description": "Extracted from master.mdb"
+    },
+    "202381": {
+        "name": "Skill ID 202381",
+        "description": "Extracted from master.mdb"
+    },
+    "202382": {
+        "name": "Skill ID 202382",
+        "description": "Extracted from master.mdb"
+    },
+    "202401": {
+        "name": "Skill ID 202401",
+        "description": "Extracted from master.mdb"
+    },
+    "202402": {
+        "name": "Skill ID 202402",
+        "description": "Extracted from master.mdb"
+    },
+    "202411": {
+        "name": "Skill ID 202411",
+        "description": "Extracted from master.mdb"
+    },
+    "202412": {
+        "name": "Skill ID 202412",
+        "description": "Extracted from master.mdb"
+    },
+    "202421": {
+        "name": "Skill ID 202421",
+        "description": "Extracted from master.mdb"
+    },
+    "202422": {
+        "name": "Skill ID 202422",
+        "description": "Extracted from master.mdb"
+    },
+    "202431": {
+        "name": "Skill ID 202431",
+        "description": "Extracted from master.mdb"
+    },
+    "202432": {
+        "name": "Skill ID 202432",
+        "description": "Extracted from master.mdb"
+    },
+    "202441": {
+        "name": "Skill ID 202441",
+        "description": "Extracted from master.mdb"
+    },
+    "202451": {
+        "name": "Skill ID 202451",
+        "description": "Extracted from master.mdb"
+    },
+    "202452": {
+        "name": "Skill ID 202452",
+        "description": "Extracted from master.mdb"
+    },
+    "202461": {
+        "name": "Skill ID 202461",
+        "description": "Extracted from master.mdb"
+    },
+    "202462": {
+        "name": "Skill ID 202462",
+        "description": "Extracted from master.mdb"
+    },
+    "202471": {
+        "name": "Skill ID 202471",
+        "description": "Extracted from master.mdb"
+    },
+    "202472": {
+        "name": "Skill ID 202472",
+        "description": "Extracted from master.mdb"
+    },
+    "202481": {
+        "name": "Skill ID 202481",
+        "description": "Extracted from master.mdb"
+    },
+    "202482": {
+        "name": "Skill ID 202482",
+        "description": "Extracted from master.mdb"
+    },
+    "202501": {
+        "name": "Skill ID 202501",
+        "description": "Extracted from master.mdb"
+    },
+    "202502": {
+        "name": "Skill ID 202502",
+        "description": "Extracted from master.mdb"
+    },
+    "210011": {
+        "name": "Skill ID 210011",
+        "description": "Extracted from master.mdb"
+    },
+    "210012": {
+        "name": "Skill ID 210012",
+        "description": "Extracted from master.mdb"
+    },
+    "210021": {
+        "name": "Skill ID 210021",
+        "description": "Extracted from master.mdb"
+    },
+    "210022": {
+        "name": "Skill ID 210022",
+        "description": "Extracted from master.mdb"
+    },
+    "210031": {
+        "name": "Skill ID 210031",
+        "description": "Extracted from master.mdb"
+    },
+    "210032": {
+        "name": "Skill ID 210032",
+        "description": "Extracted from master.mdb"
+    },
+    "210041": {
+        "name": "Skill ID 210041",
+        "description": "Extracted from master.mdb"
+    },
+    "210042": {
+        "name": "Skill ID 210042",
+        "description": "Extracted from master.mdb"
+    },
+    "210051": {
+        "name": "Skill ID 210051",
+        "description": "Extracted from master.mdb"
+    },
+    "210052": {
+        "name": "Skill ID 210052",
+        "description": "Extracted from master.mdb"
+    },
+    "210061": {
+        "name": "Skill ID 210061",
+        "description": "Extracted from master.mdb"
+    },
+    "210062": {
+        "name": "Skill ID 210062",
+        "description": "Extracted from master.mdb"
+    },
+    "210071": {
+        "name": "Skill ID 210071",
+        "description": "Extracted from master.mdb"
+    },
+    "210072": {
+        "name": "Skill ID 210072",
+        "description": "Extracted from master.mdb"
+    },
+    "210081": {
+        "name": "Skill ID 210081",
+        "description": "Extracted from master.mdb"
+    },
+    "210082": {
+        "name": "Skill ID 210082",
+        "description": "Extracted from master.mdb"
+    },
+    "210091": {
+        "name": "Skill ID 210091",
+        "description": "Extracted from master.mdb"
+    },
+    "210101": {
+        "name": "Skill ID 210101",
+        "description": "Extracted from master.mdb"
+    },
+    "210111": {
+        "name": "Skill ID 210111",
+        "description": "Extracted from master.mdb"
+    },
+    "210121": {
+        "name": "Skill ID 210121",
+        "description": "Extracted from master.mdb"
+    },
+    "210131": {
+        "name": "Skill ID 210131",
+        "description": "Extracted from master.mdb"
+    },
+    "210141": {
+        "name": "Skill ID 210141",
+        "description": "Extracted from master.mdb"
+    },
+    "300011": {
+        "name": "Skill ID 300011",
+        "description": "Extracted from master.mdb"
+    },
+    "300021": {
+        "name": "Skill ID 300021",
+        "description": "Extracted from master.mdb"
+    },
+    "300031": {
+        "name": "Skill ID 300031",
+        "description": "Extracted from master.mdb"
+    },
+    "300041": {
+        "name": "Skill ID 300041",
+        "description": "Extracted from master.mdb"
+    },
+    "300051": {
+        "name": "Skill ID 300051",
+        "description": "Extracted from master.mdb"
+    },
+    "300061": {
+        "name": "Skill ID 300061",
+        "description": "Extracted from master.mdb"
+    },
+    "300071": {
+        "name": "Skill ID 300071",
+        "description": "Extracted from master.mdb"
+    },
+    "300081": {
+        "name": "Skill ID 300081",
+        "description": "Extracted from master.mdb"
+    },
+    "300091": {
+        "name": "Skill ID 300091",
+        "description": "Extracted from master.mdb"
+    },
+    "300101": {
+        "name": "Skill ID 300101",
+        "description": "Extracted from master.mdb"
+    },
+    "300111": {
+        "name": "Skill ID 300111",
+        "description": "Extracted from master.mdb"
+    },
+    "300121": {
+        "name": "Skill ID 300121",
+        "description": "Extracted from master.mdb"
+    },
+    "300131": {
+        "name": "Skill ID 300131",
+        "description": "Extracted from master.mdb"
+    },
+    "300141": {
+        "name": "Skill ID 300141",
+        "description": "Extracted from master.mdb"
+    },
+    "900011": {
+        "name": "Skill ID 900011",
+        "description": "Extracted from master.mdb"
+    },
+    "900021": {
+        "name": "Skill ID 900021",
+        "description": "Extracted from master.mdb"
+    },
+    "900031": {
+        "name": "Skill ID 900031",
+        "description": "Extracted from master.mdb"
+    },
+    "900041": {
+        "name": "Skill ID 900041",
+        "description": "Extracted from master.mdb"
+    },
+    "900051": {
+        "name": "Skill ID 900051",
+        "description": "Extracted from master.mdb"
+    },
+    "900061": {
+        "name": "Skill ID 900061",
+        "description": "Extracted from master.mdb"
+    },
+    "900071": {
+        "name": "Skill ID 900071",
+        "description": "Extracted from master.mdb"
+    },
+    "900081": {
+        "name": "Skill ID 900081",
+        "description": "Extracted from master.mdb"
+    },
+    "900091": {
+        "name": "Skill ID 900091",
+        "description": "Extracted from master.mdb"
+    },
+    "900101": {
+        "name": "Skill ID 900101",
+        "description": "Extracted from master.mdb"
+    },
+    "900111": {
+        "name": "Skill ID 900111",
+        "description": "Extracted from master.mdb"
+    },
+    "900121": {
+        "name": "Skill ID 900121",
+        "description": "Extracted from master.mdb"
+    },
+    "900131": {
+        "name": "Skill ID 900131",
+        "description": "Extracted from master.mdb"
+    },
+    "900141": {
+        "name": "Skill ID 900141",
+        "description": "Extracted from master.mdb"
+    },
+    "900151": {
+        "name": "Skill ID 900151",
+        "description": "Extracted from master.mdb"
+    },
+    "900161": {
+        "name": "Skill ID 900161",
+        "description": "Extracted from master.mdb"
+    },
+    "900171": {
+        "name": "Skill ID 900171",
+        "description": "Extracted from master.mdb"
+    },
+    "900181": {
+        "name": "Skill ID 900181",
+        "description": "Extracted from master.mdb"
+    },
+    "900191": {
+        "name": "Skill ID 900191",
+        "description": "Extracted from master.mdb"
+    },
+    "900201": {
+        "name": "Skill ID 900201",
+        "description": "Extracted from master.mdb"
+    },
+    "900211": {
+        "name": "Skill ID 900211",
+        "description": "Extracted from master.mdb"
+    },
+    "900221": {
+        "name": "Skill ID 900221",
+        "description": "Extracted from master.mdb"
+    },
+    "900231": {
+        "name": "Skill ID 900231",
+        "description": "Extracted from master.mdb"
+    },
+    "900241": {
+        "name": "Skill ID 900241",
+        "description": "Extracted from master.mdb"
+    },
+    "900251": {
+        "name": "Skill ID 900251",
+        "description": "Extracted from master.mdb"
+    },
+    "900261": {
+        "name": "Skill ID 900261",
+        "description": "Extracted from master.mdb"
+    },
+    "900271": {
+        "name": "Skill ID 900271",
+        "description": "Extracted from master.mdb"
+    },
+    "900281": {
+        "name": "Skill ID 900281",
+        "description": "Extracted from master.mdb"
+    },
+    "900301": {
+        "name": "Skill ID 900301",
+        "description": "Extracted from master.mdb"
+    },
+    "900311": {
+        "name": "Skill ID 900311",
+        "description": "Extracted from master.mdb"
+    },
+    "900321": {
+        "name": "Skill ID 900321",
+        "description": "Extracted from master.mdb"
+    },
+    "900331": {
+        "name": "Skill ID 900331",
+        "description": "Extracted from master.mdb"
+    },
+    "900341": {
+        "name": "Skill ID 900341",
+        "description": "Extracted from master.mdb"
+    },
+    "900351": {
+        "name": "Skill ID 900351",
+        "description": "Extracted from master.mdb"
+    },
+    "900361": {
+        "name": "Skill ID 900361",
+        "description": "Extracted from master.mdb"
+    },
+    "900371": {
+        "name": "Skill ID 900371",
+        "description": "Extracted from master.mdb"
+    },
+    "900381": {
+        "name": "Skill ID 900381",
+        "description": "Extracted from master.mdb"
+    },
+    "900391": {
+        "name": "Skill ID 900391",
+        "description": "Extracted from master.mdb"
+    },
+    "900401": {
+        "name": "Skill ID 900401",
+        "description": "Extracted from master.mdb"
+    },
+    "900411": {
+        "name": "Skill ID 900411",
+        "description": "Extracted from master.mdb"
+    },
+    "900441": {
+        "name": "Skill ID 900441",
+        "description": "Extracted from master.mdb"
+    },
+    "900451": {
+        "name": "Skill ID 900451",
+        "description": "Extracted from master.mdb"
+    },
+    "900461": {
+        "name": "Skill ID 900461",
+        "description": "Extracted from master.mdb"
+    },
+    "900481": {
+        "name": "Skill ID 900481",
+        "description": "Extracted from master.mdb"
+    },
+    "900501": {
+        "name": "Skill ID 900501",
+        "description": "Extracted from master.mdb"
+    },
+    "900511": {
+        "name": "Skill ID 900511",
+        "description": "Extracted from master.mdb"
+    },
+    "900521": {
+        "name": "Skill ID 900521",
+        "description": "Extracted from master.mdb"
+    },
+    "900531": {
+        "name": "Skill ID 900531",
+        "description": "Extracted from master.mdb"
+    },
+    "900561": {
+        "name": "Skill ID 900561",
+        "description": "Extracted from master.mdb"
+    },
+    "900581": {
+        "name": "Skill ID 900581",
+        "description": "Extracted from master.mdb"
+    },
+    "900591": {
+        "name": "Skill ID 900591",
+        "description": "Extracted from master.mdb"
+    },
+    "900601": {
+        "name": "Skill ID 900601",
+        "description": "Extracted from master.mdb"
+    },
+    "900611": {
+        "name": "Skill ID 900611",
+        "description": "Extracted from master.mdb"
+    },
+    "900621": {
+        "name": "Skill ID 900621",
+        "description": "Extracted from master.mdb"
+    },
+    "900641": {
+        "name": "Skill ID 900641",
+        "description": "Extracted from master.mdb"
+    },
+    "900671": {
+        "name": "Skill ID 900671",
+        "description": "Extracted from master.mdb"
+    },
+    "900681": {
+        "name": "Skill ID 900681",
+        "description": "Extracted from master.mdb"
+    },
+    "900691": {
+        "name": "Skill ID 900691",
+        "description": "Extracted from master.mdb"
+    },
+    "900711": {
+        "name": "Skill ID 900711",
+        "description": "Extracted from master.mdb"
+    },
+    "900721": {
+        "name": "Skill ID 900721",
+        "description": "Extracted from master.mdb"
+    },
+    "900741": {
+        "name": "Skill ID 900741",
+        "description": "Extracted from master.mdb"
+    },
+    "900981": {
+        "name": "Skill ID 900981",
+        "description": "Extracted from master.mdb"
+    },
+    "910011": {
+        "name": "Skill ID 910011",
+        "description": "Extracted from master.mdb"
+    },
+    "910031": {
+        "name": "Skill ID 910031",
+        "description": "Extracted from master.mdb"
+    },
+    "910041": {
+        "name": "Skill ID 910041",
+        "description": "Extracted from master.mdb"
+    },
+    "910051": {
+        "name": "Skill ID 910051",
+        "description": "Extracted from master.mdb"
+    },
+    "910061": {
+        "name": "Skill ID 910061",
+        "description": "Extracted from master.mdb"
+    },
+    "910071": {
+        "name": "Skill ID 910071",
+        "description": "Extracted from master.mdb"
+    },
+    "910101": {
+        "name": "Skill ID 910101",
+        "description": "Extracted from master.mdb"
+    },
+    "910111": {
+        "name": "Skill ID 910111",
+        "description": "Extracted from master.mdb"
+    },
+    "910131": {
+        "name": "Skill ID 910131",
+        "description": "Extracted from master.mdb"
+    },
+    "910141": {
+        "name": "Skill ID 910141",
+        "description": "Extracted from master.mdb"
+    },
+    "910151": {
+        "name": "Skill ID 910151",
+        "description": "Extracted from master.mdb"
+    },
+    "910171": {
+        "name": "Skill ID 910171",
+        "description": "Extracted from master.mdb"
+    },
+    "910181": {
+        "name": "Skill ID 910181",
+        "description": "Extracted from master.mdb"
+    },
+    "910201": {
+        "name": "Skill ID 910201",
+        "description": "Extracted from master.mdb"
+    },
+    "910221": {
+        "name": "Skill ID 910221",
+        "description": "Extracted from master.mdb"
+    },
+    "910231": {
+        "name": "Skill ID 910231",
+        "description": "Extracted from master.mdb"
+    },
+    "910241": {
+        "name": "Skill ID 910241",
+        "description": "Extracted from master.mdb"
+    },
+    "910261": {
+        "name": "Skill ID 910261",
+        "description": "Extracted from master.mdb"
+    },
+    "910301": {
+        "name": "Skill ID 910301",
+        "description": "Extracted from master.mdb"
+    },
+    "910371": {
+        "name": "Skill ID 910371",
+        "description": "Extracted from master.mdb"
+    },
+    "910381": {
+        "name": "Skill ID 910381",
+        "description": "Extracted from master.mdb"
+    },
+    "910401": {
+        "name": "Skill ID 910401",
+        "description": "Extracted from master.mdb"
+    },
+    "910451": {
+        "name": "Skill ID 910451",
+        "description": "Extracted from master.mdb"
+    },
+    "910461": {
+        "name": "Skill ID 910461",
+        "description": "Extracted from master.mdb"
+    },
+    "910521": {
+        "name": "Skill ID 910521",
+        "description": "Extracted from master.mdb"
+    },
+    "910561": {
+        "name": "Skill ID 910561",
+        "description": "Extracted from master.mdb"
+    },
+    "910591": {
+        "name": "Skill ID 910591",
+        "description": "Extracted from master.mdb"
+    },
+    "910601": {
+        "name": "Skill ID 910601",
+        "description": "Extracted from master.mdb"
+    },
+    "910611": {
+        "name": "Skill ID 910611",
+        "description": "Extracted from master.mdb"
+    },
+    "920011": {
+        "name": "Skill ID 920011",
+        "description": "Extracted from master.mdb"
+    },
+    "920131": {
+        "name": "Skill ID 920131",
+        "description": "Extracted from master.mdb"
+    },
+    "1000011": {
+        "name": "Skill ID 1000011",
+        "description": "Extracted from master.mdb"
+    },
+    "1000012": {
+        "name": "Skill ID 1000012",
+        "description": "Extracted from master.mdb"
+    },
+    "1100011": {
+        "name": "Skill ID 1100011",
+        "description": "Extracted from master.mdb"
+    },
+    "1200011": {
+        "name": "Skill ID 1200011",
+        "description": "Extracted from master.mdb"
+    },
+    "1200021": {
+        "name": "Skill ID 1200021",
+        "description": "Extracted from master.mdb"
+    },
+    "1200031": {
+        "name": "Skill ID 1200031",
+        "description": "Extracted from master.mdb"
+    }
+}
