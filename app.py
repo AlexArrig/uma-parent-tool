@@ -44,7 +44,6 @@ def veteran_matches_blue(v, target_stat, scope):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    # Ensure every visitor has a unique session ID
     if "user_id" not in session:
         session["user_id"] = str(uuid.uuid4())
     user_id = session["user_id"]
@@ -54,7 +53,6 @@ def index():
     skill_map = load_json_file("skills.json")
     factor_map = load_json_file("factors.json")
     
-    # Handle user-specific data file upload and save it locally
     if request.method == "POST" and "data_file" in request.files:
         file = request.files["data_file"]
         if file and file.filename.endswith(".json"):
@@ -287,12 +285,31 @@ def index():
                     char_info = char_map.get(main_id, {"name": f"Character #{main_id}" if main_id else "External Character", "title": "Rental Parent"})
                     
                     rental_white_set = set()
-                    for k in ["white_sparks", "white_skills", "white_factor_array", "white_factors"]:
-                        if k in inheritance:
-                            for fid in inheritance[k]:
-                                f_info = factor_map.get(str(fid), {})
+                    rental_factors = []
+                    factor_keys = ["factor_info_array", "factor_array", "factors", "blue_factors", "pink_factors", "white_factors", "white_sparks", "white_factor_array"]
+                    for k in factor_keys:
+                        arr = inheritance.get(k, item.get(k, []))
+                        if isinstance(arr, list):
+                            for f in arr:
+                                if isinstance(f, dict):
+                                    fid = str(f.get("factor_id", f.get("id", "")))
+                                    star = f.get("star", 1)
+                                else:
+                                    fid = str(f)
+                                    star = 1
+                                f_info = factor_map.get(fid, {})
                                 if f_info:
-                                    rental_white_set.add(f_info.get("name", f"Factor #{fid}"))
+                                    f_type = f_info.get("type", 3)
+                                    cat = "blue" if f_type == 1 else ("pink" if f_type == 2 else "white")
+                                    if cat == "white":
+                                        rental_white_set.add(f_info.get("name", f"Factor #{fid}"))
+                                    else:
+                                        if not any(rf["name"] == f_info.get("name") for rf in rental_factors):
+                                            rental_factors.append({
+                                                "name": f_info.get("name", f"Factor #{fid}"),
+                                                "star": f_info.get("star", star),
+                                                "category": cat
+                                            })
                     
                     fallback_count = inheritance.get("white_count") or item.get("white_count") or 20
                     if not rental_white_set:
@@ -325,7 +342,8 @@ def index():
                         "white_count": inheritance.get("white_count", item.get("white_count", "N/A")),
                         "combined_unique_count": best_combined_count,
                         "best_veteran": best_vet_match,
-                        "rank": inheritance.get("parent_rank", "N/A")
+                        "rank": inheritance.get("parent_rank", item.get("parent_rank", "N/A")),
+                        "rental_factors": rental_factors
                     })
                 
                 external_results.sort(key=lambda x: x["combined_unique_count"], reverse=True)

@@ -279,20 +279,62 @@
                 <div class="space-y-4">
                     <h3 class="text-xl font-bold text-slate-200">{{ external_title }}</h3>
                     {% if external_results %}
-                        <div class="grid grid-cols-1 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {% for ext in external_results %}
-                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between gap-3 shadow-md hover:border-slate-700 transition-all">
                                 <div>
-                                    <div class="flex items-center gap-3 mb-1">
+                                    <!-- Header Badges -->
+                                    <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
                                         <span class="bg-purple-950 border border-purple-800 text-purple-300 font-bold text-xs px-2.5 py-1 rounded-full">
                                             Combined Unique: {{ ext.combined_unique_count }}
                                         </span>
-                                        <span class="text-xs text-slate-400">Trainer: <strong class="text-slate-300">{{ ext.trainer_name }}</strong></span>
-                                        <span class="text-xs text-slate-500">ID: {{ ext.account_id }}</span>
+                                        <span class="text-xs text-slate-400">Rank: <strong class="text-slate-200">{{ ext.rank }}</strong></span>
                                     </div>
-                                    <h4 class="font-bold text-base text-slate-100">{{ ext.chara_name }} <span class="text-xs font-normal text-purple-400">({{ ext.chara_title }})</span></h4>
+
+                                    <div class="text-[11px] text-slate-400 mb-3">
+                                        Trainer: <strong class="text-slate-300">{{ ext.trainer_name }}</strong> <span class="text-slate-500">(ID: {{ ext.account_id }})</span>
+                                    </div>
+
+                                    <!-- Rental Parent -->
+                                    <div class="space-y-1.5 mb-3 pb-3 border-b border-slate-800/80 text-xs">
+                                        <div class="flex flex-wrap items-baseline gap-1.5">
+                                            <span class="text-slate-400 font-semibold">Rental:</span>
+                                            <strong class="text-purple-400 text-sm">{{ ext.chara_name }}</strong>
+                                            <span class="text-slate-500">({{ ext.chara_title }})</span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-1 mt-1">
+                                            {% for f in ext.rental_factors %}
+                                                {% if f.category in ['blue', 'pink'] %}
+                                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
+                                                        {% if f.category == 'blue' %}bg-blue-950/60 border border-blue-800/60 text-blue-300{% else %}bg-pink-950/60 border border-pink-800/60 text-pink-300{% endif %}">
+                                                        {{ '★' * f.star }}{{ f.name }}
+                                                    </span>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                    <!-- Best Roster Match -->
                                     {% if ext.best_veteran %}
-                                        <p class="text-xs text-slate-400 mt-1">Best Roster Match: <strong class="text-slate-200">{{ ext.best_veteran.display_name }}</strong></p>
+                                    <div class="space-y-1.5 text-xs">
+                                        <div class="flex flex-wrap items-baseline gap-1.5">
+                                            <span class="text-slate-400 font-semibold">My Match:</span>
+                                            <strong class="text-purple-400 text-sm">{{ ext.best_veteran.display_name }}</strong>
+                                            <span class="text-slate-500">({{ ext.best_veteran.rank_score }} Rank)</span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-1 mt-1">
+                                            {% for f in ext.best_veteran.localized_factors %}
+                                                {% if f.category in ['blue', 'pink'] %}
+                                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
+                                                        {% if f.category == 'blue' %}bg-blue-950/60 border border-blue-800/60 text-blue-300{% else %}bg-pink-950/60 border border-pink-800/60 text-pink-300{% endif %}">
+                                                        {{ '★' * f.star }}{{ f.name }}
+                                                    </span>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="text-xs text-slate-500 italic">No roster match found</div>
                                     {% endif %}
                                 </div>
                             </div>
