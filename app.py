@@ -5,50 +5,87 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# Configure upload storage folder
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 DATA_FILE_PATH = os.path.join(UPLOAD_FOLDER, 'data.json')
 
 def load_roster_data():
-    """Loads and normalizes roster data from the uploaded data.json file with safe fallbacks."""
+    """Loads and robustly normalizes roster data from the uploaded data.json file."""
     if not os.path.exists(DATA_FILE_PATH):
         return []
     try:
         with open(DATA_FILE_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
             
-            # Support both raw lists and wrapped dictionaries
             if isinstance(data, list):
                 veterans = data
             elif isinstance(data, dict):
-                veterans = data.get('veterans', data.get('chara_list', []))
+                veterans = data.get('veterans', data.get('chara_list', data.get('roster', [])))
             else:
                 veterans = []
             
             processed = []
             for v in veterans:
-                # 1. Fallbacks for missing display names and titles to fix blank cards
-                v['display_name'] = v.get('display_name') or v.get('name') or v.get('chara_name') or 'Unknown Uma'
-                v['display_title'] = v.get('display_title') or v.get('title') or v.get('chara_title') or ''
-
-                # 2. Ensure factors and parents are valid lists
-                if 'localized_factors' not in v:
-                    v['localized_factors'] = v.get('factors', [])
-                if 'localized_parents' not in v:
-                    v['localized_parents'] = v.get('parents', [])
-
-                # 3. Ensure white skill counts exist for sorting
-                if 'main_white_count' not in v:
-                    factors = v.get('localized_factors', [])
-                    v['main_white_count'] = sum(
-                        1 for f in factors 
-                        if str(f.get('category', '')).lower() == 'white' or str(f.get('type', '')).lower() == 'white'
-                    )
-                if 'total_white_count' not in v:
-                    v['total_white_count'] = v.get('main_white_count', 0) * 2
+                norm_v = {}
+                # Robust name and title fallbacks across different extraction schemas
+                norm_v['display_name'] = (
+                    v.get('display_name') or v.get('name') or 
+                    v.get('chara_name') or v.get('character_name') or 'Unknown Uma'
+                )
+                norm_v['display_title'] = (
+                    v.get('display_title') or v.get('title') or 
+                    v.get('chara_title') or v.get('character_title') or ''
+                )
+                norm_v['rank_score'] = int(
+                    v.get('rank_score') or v.get('score') or 
+                    v.get('evaluation') or v.get('rate') or 0
+                )
                 
-                processed.append(v)
+                # Stats mapping
+                norm_v['speed'] = int(v.get('speed') or v.get('spd') or 0)
+                norm_v['stamina'] = int(v.get('stamina') or v.get('sta') or 0)
+                norm_v['power'] = int(v.get('power') or v.get('pwr') or 0)
+                norm_v['guts'] = int(v.get('guts') or v.get('gut') or 0)
+                norm_v['wiz'] = int(v.get('wiz') or v.get('wit') or v.get('wisdom') or 0)
+
+                # Factors mapping
+                factors = v.get('localized_factors') or v.get('factors') or v.get('sparks') or []
+                norm_factors = []
+                for f in factors:
+                    if isinstance(f, dict):
+                        norm_factors.append({
+                            'name': f.get('name') or f.get('factor_name') or 'Unknown Factor',
+                            'star': int(f.get('star') or f.get('level') or f.get('stars') or 1),
+                            'category': str(f.get('category') or f.get('type') or f.get('color') or 'blue').lower()
+                        })
+                    elif isinstance(f, str):
+                        norm_factors.append({'name': f, 'star': 1, 'category': 'blue'})
+                norm_v['localized_factors'] = norm_factors
+
+                # Parents mapping
+                parents = v.get('localized_parents') or v.get('parents') or []
+                norm_parents = []
+                for p in parents:
+                    if isinstance(p, dict):
+                        norm_parents.append({
+                            'name': p.get('name') or p.get('chara_name') or 'Unknown Parent',
+                            'title': p.get('title') or p.get('chara_title') or ''
+                        })
+                    elif isinstance(p, str):
+                        norm_parents.append({'name': p, 'title': ''})
+                norm_v['localized_parents'] = norm_parents
+
+                # White skill counts calculation / fallback
+                main_whites = sum(1 for f in norm_factors if f.get('category') in ['white', 'skill'])
+                if main_whites == 0 and len(norm_factors) > 0:
+                    main_whites = int(v.get('main_white_count') or v.get('main_whites') or len(norm_factors))
+                else:
+                    main_whites = int(v.get('main_white_count') or v.get('main_whites') or main_whites)
+
+                norm_v['main_white_count'] = main_whites
+                norm_v['total_white_count'] = int(v.get('total_white_count') or v.get('total_whites') or (main_whites * 2))
+
+                processed.append(norm_v)
             return processed
     except Exception as e:
         print(f"Error loading data.json: {e}")
@@ -65,7 +102,6 @@ def index():
     has_data_file = os.path.exists(DATA_FILE_PATH)
     veterans = load_roster_data()
 
-    # Retrieve query parameters from frontend requests
     current_sort = request.args.get("sort", "desc")
     blue_factor = request.args.get("blue_factor", "")
     blue_scope = request.args.get("blue_scope", "all")
@@ -73,13 +109,13 @@ def index():
     action_triggered = request.args.get("action", "")
     api_key = request.args.get("api_key", "")
 
-    # Filter veterans for Parent Finder based on selected blue factor
+    # Filter veterans for Parent Finder
     filtered_veterans = veterans
     if blue_factor:
         filtered_veterans = [
             v for v in veterans 
             if any(
-                str(f.get('name', '')).lower() == blue_factor.lower() and str(f.get('category', '')).lower() == 'blue' 
+                str(f.get('name', '')).lower() == blue_factor.lower() and f.get('category', '') == 'blue' 
                 for f in v.get('localized_factors', [])
             )
         ]
@@ -96,7 +132,6 @@ def index():
     elif current_sort == "total_white":
         veterans = sorted(veterans, key=lambda x: x.get("total_white_count", 0), reverse=True)
 
-    # Parent Finder Action Handlers
     top_parent_pairs = []
     external_results = []
     external_title = ""
