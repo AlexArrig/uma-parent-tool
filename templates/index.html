@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uma Parent Tool & Roster Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Sleek Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9333ea;
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
 
@@ -75,13 +93,19 @@
         <!-- Tab 1: Roster -->
         <div id="tab-roster" class="space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
-                <span class="text-sm font-medium text-slate-300">Order by Rank Score:</span>
-                <div class="flex items-center gap-2">
-                    <a href="/?sort=desc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'desc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Highest to Lowest (Desc)
+                <span class="text-sm font-medium text-slate-300">Sort by:</span>
+                <div class="flex flex-wrap items-center gap-2">
+                    <a href="/?sort=desc" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'desc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Rank score (Desc)
                     </a>
-                    <a href="/?sort=asc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'asc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Lowest to Highest (Asc)
+                    <a href="/?sort=asc" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'asc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Rank score (Asc)
+                    </a>
+                    <a href="/?sort=main_white" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'main_white' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Main Parent White Skills
+                    </a>
+                    <a href="/?sort=total_white" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'total_white' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Total white skills
                     </a>
                 </div>
             </div>
@@ -97,7 +121,7 @@
                                     <p class="text-xs text-purple-400">{{ v.display_title }}</p>
                                 </div>
                                 <span class="bg-purple-950 text-purple-300 border border-purple-800 text-xs font-bold px-2.5 py-1 rounded-full">
-                                    {{ v.rank_score }} Rank
+                                    {{ v.rank_score }} Rank Score
                                 </span>
                             </div>
 
@@ -120,7 +144,7 @@
                                     <span class="font-bold text-slate-200">{{ v.guts }}</span>
                                 </div>
                                 <div>
-                                    <span class="block text-slate-500 font-semibold">WIZ</span>
+                                    <span class="block text-slate-500 font-semibold">WIT</span>
                                     <span class="font-bold text-slate-200">{{ v.wiz }}</span>
                                 </div>
                             </div>
@@ -184,15 +208,15 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-1">Pair Sorting Priority:</label>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Sort by:</label>
                         <div class="flex items-center gap-4 pt-2">
                             <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
                                 <input type="radio" name="pair_sort" value="main_total" {% if pair_sort != 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Main then Unique
+                                Main Parent Unique Sparks
                             </label>
                             <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
                                 <input type="radio" name="pair_sort" value="total_main" {% if pair_sort == 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Unique then Main
+                                Total Unique Sparks
                             </label>
                         </div>
                     </div>
