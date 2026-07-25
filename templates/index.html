@@ -5,23 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uma Parent Tool & Roster Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #020617;
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #9333ea;
-        }
-    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
 
@@ -92,19 +75,13 @@
         <!-- Tab 1: Roster -->
         <div id="tab-roster" class="space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
-                <span class="text-sm font-medium text-slate-300">Sort by:</span>
-                <div class="flex flex-wrap items-center gap-2">
-                    <a href="/?sort=desc" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'desc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Rank score (Desc)
+                <span class="text-sm font-medium text-slate-300">Order by Rank Score:</span>
+                <div class="flex items-center gap-2">
+                    <a href="/?sort=desc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'desc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Highest to Lowest (Desc)
                     </a>
-                    <a href="/?sort=asc" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'asc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Rank score (Asc)
-                    </a>
-                    <a href="/?sort=main_white" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'main_white' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Main Parent White Skills
-                    </a>
-                    <a href="/?sort=total_white" class="px-3 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'total_white' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Total white skills
+                    <a href="/?sort=asc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'asc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Lowest to Highest (Asc)
                     </a>
                 </div>
             </div>
@@ -119,7 +96,7 @@
                                     <h3 class="font-bold text-lg text-slate-100">{{ v.display_name }}</h3>
                                     <p class="text-xs text-purple-400">{{ v.display_title }}</p>
                                 </div>
-                                <span class="bg-purple-950 text-purple-300 border border-purple-800 text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
+                                <span class="bg-purple-950 text-purple-300 border border-purple-800 text-xs font-bold px-2.5 py-1 rounded-full">
                                     {{ v.rank_score }} Rank
                                 </span>
                             </div>
@@ -143,30 +120,23 @@
                                     <span class="font-bold text-slate-200">{{ v.guts }}</span>
                                 </div>
                                 <div>
-                                    <span class="block text-slate-500 font-semibold">WIT</span>
+                                    <span class="block text-slate-500 font-semibold">WIZ</span>
                                     <span class="font-bold text-slate-200">{{ v.wiz }}</span>
                                 </div>
                             </div>
 
                             <!-- Factors / Skills Summary -->
                             <div class="space-y-2 mt-4 text-xs">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="font-semibold text-slate-400 uppercase tracking-wider text-[10px]">Factors Highlight</h4>
-                                    <span class="text-[10px] text-purple-300">Main Whites: {{ v.main_white_count }} | Total: {{ v.total_white_count }}</span>
-                                </div>
+                                <h4 class="font-semibold text-slate-400 uppercase tracking-wider text-[10px]">Factors Highlight</h4>
                                 <div class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1">
-                                    {% if v.localized_factors %}
-                                        {% for f in v.localized_factors %}
-                                            <span class="px-2 py-0.5 rounded-md border text-[11px] 
-                                                {% if f.category == 'blue' %} bg-blue-950/40 border-blue-800 text-blue-300 
-                                                {% elif f.category == 'pink' %} bg-pink-950/40 border-pink-800 text-pink-300 
-                                                {% else %} bg-slate-800/60 border-slate-700 text-slate-300 {% endif %}">
-                                                {{ f.name }} (★{{ f.star }})
-                                            </span>
-                                        {% endfor %}
-                                    {% else %}
-                                        <span class="text-slate-500 italic">No factors recorded</span>
-                                    {% endif %}
+                                    {% for f in v.localized_factors %}
+                                        <span class="px-2 py-0.5 rounded-md border text-[11px] 
+                                            {% if f.category == 'blue' %} bg-blue-950/40 border-blue-800 text-blue-300 
+                                            {% elif f.category == 'pink' %} bg-pink-950/40 border-pink-800 text-pink-300 
+                                            {% else %} bg-slate-800/60 border-slate-700 text-slate-300 {% endif %}">
+                                            {{ f.name }} (★{{ f.star }})
+                                        </span>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -175,13 +145,9 @@
                         <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400">
                             <span class="font-semibold block mb-1 text-slate-300">Parents:</span>
                             <div class="space-y-1">
-                                {% if v.localized_parents %}
-                                    {% for p in v.localized_parents %}
-                                        <div class="truncate"><strong class="text-slate-300">{{ p.name }}</strong> <span class="text-slate-500">({{ p.title }})</span></div>
-                                    {% endfor %}
-                                {% else %}
-                                    <span class="text-slate-500 italic">None</span>
-                                {% endif %}
+                                {% for p in v.localized_parents %}
+                                    <div class="truncate"><strong class="text-slate-300">{{ p.name }}</strong> <span class="text-slate-500">({{ p.title }})</span></div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -218,15 +184,15 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-1">Sort by:</label>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Pair Sorting Priority:</label>
                         <div class="flex items-center gap-4 pt-2">
                             <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
                                 <input type="radio" name="pair_sort" value="main_total" {% if pair_sort != 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Main Parent Unique Sparks
+                                Main then Unique
                             </label>
                             <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
                                 <input type="radio" name="pair_sort" value="total_main" {% if pair_sort == 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Total Unique Sparks
+                                Unique then Main
                             </label>
                         </div>
                     </div>
@@ -291,6 +257,9 @@
                                         <span class="text-xs text-slate-500">ID: {{ ext.account_id }}</span>
                                     </div>
                                     <h4 class="font-bold text-base text-slate-100">{{ ext.chara_name }} <span class="text-xs font-normal text-purple-400">({{ ext.chara_title }})</span></h4>
+                                    {% if ext.best_veteran %}
+                                        <p class="text-xs text-slate-400 mt-1">Best Roster Match: <strong class="text-slate-200">{{ ext.best_veteran.display_name }}</strong></p>
+                                    {% endif %}
                                 </div>
                             </div>
                             {% endfor %}
@@ -308,6 +277,7 @@
     <!-- Footer -->
     <footer class="mt-16 py-8 border-t border-slate-900 bg-slate-950 text-center text-xs text-slate-500 space-y-1">
         <p>Resources and API provided by <a href="https://uma.moe/" target="_blank" class="text-purple-400 hover:underline font-medium">Uma.moe</a>.</p>
+        <p>Need to generate your data JSON? Use the <a href="https://github.com/xancia/UmaExtractor/releases/tag/v2.1" target="_blank" class="text-purple-400 hover:underline font-medium">UmaExtractor tool</a>.</p>
     </footer>
 
     <!-- JavaScript Support -->
