@@ -11,7 +11,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 DATA_FILE_PATH = os.path.join(UPLOAD_FOLDER, 'data.json')
 
 def load_roster_data():
-    """Loads and normalizes roster data from the uploaded data.json file."""
+    """Loads and normalizes roster data from the uploaded data.json file with safe fallbacks."""
     if not os.path.exists(DATA_FILE_PATH):
         return []
     try:
@@ -28,15 +28,24 @@ def load_roster_data():
             
             processed = []
             for v in veterans:
-                # Ensure white skill counts exist to allow clean sorting
+                # 1. Fallbacks for missing display names and titles to fix blank cards
+                v['display_name'] = v.get('display_name') or v.get('name') or v.get('chara_name') or 'Unknown Uma'
+                v['display_title'] = v.get('display_title') or v.get('title') or v.get('chara_title') or ''
+
+                # 2. Ensure factors and parents are valid lists
+                if 'localized_factors' not in v:
+                    v['localized_factors'] = v.get('factors', [])
+                if 'localized_parents' not in v:
+                    v['localized_parents'] = v.get('parents', [])
+
+                # 3. Ensure white skill counts exist for sorting
                 if 'main_white_count' not in v:
                     factors = v.get('localized_factors', [])
                     v['main_white_count'] = sum(
                         1 for f in factors 
-                        if f.get('category', '').lower() == 'white' or f.get('type', '').lower() == 'white'
+                        if str(f.get('category', '')).lower() == 'white' or str(f.get('type', '')).lower() == 'white'
                     )
                 if 'total_white_count' not in v:
-                    # Fallback metric calculation if not explicitly provided in JSON schema
                     v['total_white_count'] = v.get('main_white_count', 0) * 2
                 
                 processed.append(v)
@@ -70,14 +79,14 @@ def index():
         filtered_veterans = [
             v for v in veterans 
             if any(
-                f.get('name', '').lower() == blue_factor.lower() and f.get('category', '').lower() == 'blue' 
+                str(f.get('name', '')).lower() == blue_factor.lower() and str(f.get('category', '')).lower() == 'blue' 
                 for f in v.get('localized_factors', [])
             )
         ]
 
     filtered_count = len(filtered_veterans)
 
-    # Roster Sorting Logic (Fixes Main Parent & Total White Skills sorting)
+    # Roster Sorting Logic
     if current_sort == "desc":
         veterans = sorted(veterans, key=lambda x: x.get("rank_score", 0), reverse=True)
     elif current_sort == "asc":
