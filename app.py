@@ -1,5 +1,6 @@
 import json
 import os
+import uuid
 import requests
 from flask import Flask, render_template, request, session, redirect, url_for
 from itertools import combinations
@@ -43,21 +44,27 @@ def veteran_matches_blue(v, target_stat, scope):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    # Ensure every visitor has a unique session ID
+    if "user_id" not in session:
+        session["user_id"] = str(uuid.uuid4())
+    user_id = session["user_id"]
+    user_data_filename = f"data_{user_id}.json"
+
     char_map = load_json_file("characters.json")
     skill_map = load_json_file("skills.json")
     factor_map = load_json_file("factors.json")
     
-    # Handle data.json upload and save it locally (overwriting previous data)
+    # Handle user-specific data file upload and save it locally
     if request.method == "POST" and "data_file" in request.files:
         file = request.files["data_file"]
         if file and file.filename.endswith(".json"):
             try:
                 os.makedirs(DATA_DIR, exist_ok=True)
-                file.save(os.path.join(DATA_DIR, "data.json"))
+                file.save(os.path.join(DATA_DIR, user_data_filename))
             except Exception as e:
                 print("Error saving uploaded file:", e)
 
-    raw_data = load_json_file("data.json")
+    raw_data = load_json_file(user_data_filename)
     veterans_list = raw_data if isinstance(raw_data, list) else raw_data.get("trained_chara_array", [])
 
     vet_lookup = {}
@@ -326,7 +333,7 @@ def index():
         except Exception as e:
             print("API Error Exception:", e)
 
-    has_data_file = os.path.exists(os.path.join(DATA_DIR, "data.json"))
+    has_data_file = os.path.exists(os.path.join(DATA_DIR, user_data_filename))
 
     return render_template(
         "index.html", 
