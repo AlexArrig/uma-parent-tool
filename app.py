@@ -173,29 +173,39 @@ def index():
         v["localized_parents"] = parents
         
         v_white_set = set()
+        v_main_white_set = set()
         for f in localized_factors:
             if f["category"] == "white":
                 v_white_set.add(f["name"])
+                v_main_white_set.add(f["name"])
         for p in parents:
             for pf in p.get("factors", []):
-                if pf.get("category") == "white":
+                if pf.get("category"] == "white":
                     v_white_set.add(pf["name"])
+                    
         v["white_skill_set"] = v_white_set
+        v["main_white_count"] = len(v_main_white_set)
+        v["total_white_count"] = len(v_white_set)
         
         localized_veterans.append(v)
 
-    sort_order = request.args.get("sort", "desc")
+    sort_order = request.args.get("sort", "rank_desc")
     try:
-        localized_veterans.sort(
-            key=lambda x: float(x.get("rank_score", 0)),
-            reverse=(sort_order == "desc")
-        )
+        if sort_order == "rank_asc":
+            localized_veterans.sort(key=lambda x: float(x.get("rank_score", 0)), reverse=False)
+        elif sort_order == "main_white":
+            localized_veterans.sort(key=lambda x: x.get("main_white_count", 0), reverse=True)
+        elif sort_order == "total_white":
+            localized_veterans.sort(key=lambda x: x.get("total_white_count", 0), reverse=True)
+        else:
+            localized_veterans.sort(key=lambda x: float(x.get("rank_score", 0)), reverse=True)
     except Exception:
         pass
 
     blue_factor = request.args.get("blue_factor", "")
     blue_scope = request.args.get("blue_scope", "all")
-    pair_sort = request.args.get("pair_sort", "main_total")
+    pair_sort = request.args.get("pair_sort", "total")
+    search_mode = request.args.get("search_mode", "local")
     
     filtered_veterans = [
         v for v in localized_veterans 
@@ -221,7 +231,7 @@ def index():
                         combined_white[name] = f
             for p in v1.get("localized_parents", []) + v2.get("localized_parents", []):
                 for pf in p.get("factors", []):
-                    if pf.get("category") == "white":
+                    if pf.get("category"] == "white":
                         name = pf["name"]
                         if name not in combined_white or pf["star"] > combined_white[name]["star"]:
                             combined_white[name] = pf
@@ -246,12 +256,8 @@ def index():
 
         if pair_sort == "main":
             parent_combinations.sort(key=lambda x: x["main_white_count"], reverse=True)
-        elif pair_sort == "total":
-            parent_combinations.sort(key=lambda x: x["unique_white_count"], reverse=True)
-        elif pair_sort == "total_main":
-            parent_combinations.sort(key=lambda x: (x["unique_white_count"], x["main_white_count"]), reverse=True)
         else:
-            parent_combinations.sort(key=lambda x: (x["main_white_count"], x["unique_white_count"]), reverse=True)
+            parent_combinations.sort(key=lambda x: x["unique_white_count"], reverse=True)
             
         top_parent_pairs = parent_combinations[:20]
 
@@ -368,6 +374,7 @@ def index():
         blue_factor=blue_factor,
         blue_scope=blue_scope,
         pair_sort=pair_sort,
+        search_mode=search_mode,
         filtered_count=len(filtered_veterans),
         has_data_file=has_data_file
     )

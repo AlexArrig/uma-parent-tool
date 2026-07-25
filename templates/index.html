@@ -92,13 +92,19 @@
         <!-- Tab 1: Roster -->
         <div id="tab-roster" class="space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
-                <span class="text-sm font-medium text-slate-300">Order by Rank Score:</span>
-                <div class="flex items-center gap-2">
-                    <a href="/?sort=desc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'desc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Highest to Lowest (Desc)
+                <span class="text-sm font-medium text-slate-300">Order Roster by:</span>
+                <div class="flex flex-wrap items-center gap-2">
+                    <a href="/?sort=rank_desc" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'rank_desc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Rank Score Highest to Lowest (Desc)
                     </a>
-                    <a href="/?sort=asc" class="px-4 py-2 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'asc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
-                        Lowest to Highest (Asc)
+                    <a href="/?sort=rank_asc" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'rank_asc' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Rank Score Lowest to Highest (Asc)
+                    </a>
+                    <a href="/?sort=main_white" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'main_white' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Main White Skills (Desc)
+                    </a>
+                    <a href="/?sort=total_white" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors {% if current_sort == 'total_white' %}bg-purple-600 text-white{% else %}bg-slate-800 text-slate-300 hover:bg-slate-700{% endif %}">
+                        Total White Skills (Desc)
                     </a>
                 </div>
             </div>
@@ -182,6 +188,22 @@
             <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl space-y-6">
                 <h3 class="text-lg font-bold text-slate-200">Parent Pairing & Search Tool</h3>
                 
+                <!-- Search Mode Selector -->
+                <div class="flex items-center gap-6 pb-4 border-b border-slate-800">
+                    <span class="text-sm font-medium text-slate-300">Search Type:</span>
+                    <div class="flex items-center gap-6">
+                        <label class="flex items-center gap-2 text-sm font-semibold cursor-pointer text-slate-200">
+                            <input type="radio" name="search_mode" value="local" {% if search_mode != 'rental' %}checked{% endif %} onchange="updateSearchMode()" class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                            Local Search
+                        </label>
+                        <label class="flex items-center gap-2 text-sm font-semibold cursor-pointer text-slate-200">
+                            <input type="radio" name="search_mode" value="rental" {% if search_mode == 'rental' %}checked{% endif %} onchange="updateSearchMode()" class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                            Rental Search
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Filters shared or specific -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
                     <div>
                         <label class="block text-sm font-medium text-slate-300 mb-1">Filter Blue Factor:</label>
@@ -200,39 +222,37 @@
                         <label for="blue_scope" class="text-sm text-slate-300 cursor-pointer">Main Parent Only (Exclude Grandparents)</label>
                     </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-1">Pair Sorting Strategy:</label>
-                        <div class="grid grid-cols-2 gap-2 pt-1">
+                    <!-- Local Search Sort Options -->
+                    <div id="local-sort-container" class="space-y-1">
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Order by:</label>
+                        <div class="flex items-center gap-4">
                             <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
                                 <input type="radio" name="pair_sort" value="main" {% if pair_sort == 'main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
                                 Main White Skills
                             </label>
                             <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
-                                <input type="radio" name="pair_sort" value="total" {% if pair_sort == 'total' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Total White (Main + Parents)
-                            </label>
-                            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
-                                <input type="radio" name="pair_sort" value="main_total" {% if pair_sort == 'main_total' or not pair_sort %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Main then Total
-                            </label>
-                            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
-                                <input type="radio" name="pair_sort" value="total_main" {% if pair_sort == 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Total then Main
+                                <input type="radio" name="pair_sort" value="total" {% if pair_sort != 'main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                                Total White Skills
                             </label>
                         </div>
                     </div>
                 </div>
 
+                <!-- Action Buttons depending on Search Mode -->
                 <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-4 items-center">
-                    <button onclick="triggerAction('local_sparks')" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors shadow-lg shadow-purple-900/30">
-                        Find Best Local Pairs ({{ filtered_count }} Vets)
-                    </button>
-                    <button onclick="triggerAction('rental_min_20')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-purple-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
-                        Find Rental Parents (Min 20 Main Whites)
-                    </button>
-                    <button onclick="triggerAction('rental_top_whites')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-purple-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
-                        Find Top White Sparks Rentals
-                    </button>
+                    <div id="local-action-btn" class="w-full sm:w-auto">
+                        <button onclick="triggerAction('local_sparks')" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-2.5 rounded-lg text-sm transition-colors shadow-lg shadow-purple-900/30">
+                            Find Best Local Pairs ({{ filtered_count }} Vets)
+                        </button>
+                    </div>
+                    <div id="rental-action-btns" class="hidden flex flex-wrap gap-4">
+                        <button onclick="triggerAction('rental_min_20')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-purple-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
+                            Find Rental Parents (Min 20 Main Whites)
+                        </button>
+                        <button onclick="triggerAction('rental_top_whites')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-purple-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">
+                            Find Top White Sparks Rentals
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -404,6 +424,23 @@
             }
         }
 
+        function updateSearchMode() {
+            const searchMode = document.querySelector('input[name="search_mode"]:checked').value;
+            const localSortContainer = document.getElementById('local-sort-container');
+            const localActionBtn = document.getElementById('local-action-btn');
+            const rentalActionBtns = document.getElementById('rental-action-btns');
+
+            if (searchMode === 'rental') {
+                localSortContainer.classList.add('hidden');
+                localActionBtn.classList.add('hidden');
+                rentalActionBtns.classList.remove('hidden');
+            } else {
+                localSortContainer.classList.remove('hidden');
+                localActionBtn.classList.remove('hidden');
+                rentalActionBtns.classList.add('hidden');
+            }
+        }
+
         function toggleMainOnlyVisibility() {
             const blueFactorSelect = document.getElementById('blue_factor');
             const mainScopeContainer = document.getElementById('main-scope-container');
@@ -448,8 +485,9 @@
             const scopeCheckbox = document.getElementById('blue_scope');
             const blueScope = scopeCheckbox && scopeCheckbox.checked ? 'main' : 'all';
             
+            const searchMode = document.querySelector('input[name="search_mode"]:checked').value;
             const selectedPairSort = document.querySelector('input[name="pair_sort"]:checked');
-            const pairSort = selectedPairSort ? selectedPairSort.value : 'main_total';
+            const pairSort = selectedPairSort ? selectedPairSort.value : 'total';
             
             const apiKey = localStorage.getItem('uma_api_key') || '';
 
@@ -458,7 +496,7 @@
                 return;
             }
 
-            let url = `/?action=${action}`;
+            let url = `/?action=${action}&search_mode=${searchMode}`;
             if (blueFactor) url += `&blue_factor=${encodeURIComponent(blueFactor)}`;
             if (blueScope === 'main') url += `&blue_scope=main`;
             if (pairSort) url += `&pair_sort=${encodeURIComponent(pairSort)}`;
@@ -484,6 +522,7 @@
             }
 
             toggleMainOnlyVisibility();
+            updateSearchMode();
         });
     </script>
 </body>
