@@ -178,7 +178,7 @@ def index():
                 v_white_set.add(f["name"])
         for p in parents:
             for pf in p.get("factors", []):
-                if pf.get("category"] == "white":
+                if pf.get("category") == "white":
                     v_white_set.add(pf["name"])
         v["white_skill_set"] = v_white_set
         
@@ -221,7 +221,7 @@ def index():
                         combined_white[name] = f
             for p in v1.get("localized_parents", []) + v2.get("localized_parents", []):
                 for pf in p.get("factors", []):
-                    if pf.get("category"] == "white":
+                    if pf.get("category") == "white":
                         name = pf["name"]
                         if name not in combined_white or pf["star"] > combined_white[name]["star"]:
                             combined_white[name] = pf
