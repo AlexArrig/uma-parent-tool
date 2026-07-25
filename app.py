@@ -146,46 +146,59 @@ def index():
 
                 parents.append({
                     "name": p_char_info["name"],
-                    "title": p_char_info["title"] + (" (Rental)" if is_rental and p_data.get("owner_viewer_id", 0) != 0 else ""),
+                    "card_id": p_card_id,
+                    "title": p_char_info["title"],
+                    "is_rental": is_rental,
+                    "owner_viewer_id": p_data.get("owner_viewer_id", 0),
                     "rank_score": p_data.get("rank_score", "N/A" if is_rental else "-"),
                     "speed": p_data.get("speed", "-"),
                     "stamina": p_data.get("stamina", "-"),
                     "power": p_data.get("power", "-"),
                     "guts": p_data.get("guts", "-"),
                     "wiz": p_data.get("wiz", "-"),
-                    "is_rental": is_rental,
                     "factors": p_factors
                 })
             else:
                 parents.append({
                     "name": "Unknown Parent",
+                    "card_id": "000000",
                     "title": "Inherited",
+                    "is_rental": True,
+                    "owner_viewer_id": 0,
                     "rank_score": "N/A",
                     "speed": "-", "stamina": "-", "power": "-", "guts": "-", "wiz": "-",
-                    "is_rental": True,
                     "factors": []
                 })
 
         v["display_name"] = char_info["name"]
         v["display_title"] = char_info["title"]
+        v["card_id"] = card_id
         v["localized_skills"] = localized_skills
         v["localized_factors"] = localized_factors
         v["localized_parents"] = parents
         
-        v_white_set = set()
+        # Calculate Main White Skills and Total White Skills (including grandparents in succession_chara_array)
         v_main_white_set = set()
         for f in localized_factors:
             if f["category"] == "white":
-                v_white_set.add(f["name"])
                 v_main_white_set.add(f["name"])
+
+        v_total_white_set = set(v_main_white_set)
         for p in parents:
             for pf in p.get("factors", []):
                 if pf.get("category") == "white":
-                    v_white_set.add(pf["name"])
+                    v_total_white_set.add(pf["name"])
                     
-        v["white_skill_set"] = v_white_set
+        for succ_item in succession_array:
+            for sf in succ_item.get("factor_info_array", []):
+                sf_id = str(sf.get("factor_id"))
+                sf_info = factor_map.get(sf_id, {})
+                if sf_info.get("type", 3) == 3:
+                    v_total_white_set.add(sf_info.get("name", f"Factor #{sf_id}"))
+
+        v["white_skill_set"] = v_total_white_set
         v["main_white_count"] = len(v_main_white_set)
-        v["total_white_count"] = len(v_white_set)
+        v["total_white_count"] = len(v_total_white_set)
         
         localized_veterans.append(v)
 

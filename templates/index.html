@@ -117,11 +117,17 @@
                             <div class="flex justify-between items-start mb-3">
                                 <div>
                                     <h3 class="font-bold text-lg text-slate-100">{{ v.display_name }}</h3>
-                                    <p class="text-xs text-purple-400">{{ v.display_title }}</p>
+                                    <p class="text-xs text-purple-400">Card ID {{ v.card_id }}</p>
                                 </div>
-                                <span class="bg-purple-950 text-purple-300 border border-purple-800 text-xs font-bold px-2.5 py-1 rounded-full">
-                                    {{ v.rank_score }} Rank
-                                </span>
+                                <div class="text-right space-y-1">
+                                    <span class="inline-block bg-purple-950 text-purple-300 border border-purple-800 text-xs font-bold px-2.5 py-1 rounded-full">
+                                        {{ v.rank_score }} Rank
+                                    </span>
+                                    <div class="text-[11px] text-slate-300 font-medium">
+                                        <div>{{ v.main_white_count }} Main Skills</div>
+                                        <div>{{ v.total_white_count }} Total Skills</div>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Stats Row -->
@@ -169,7 +175,10 @@
                             <span class="font-semibold block mb-1 text-slate-300">Parents:</span>
                             <div class="space-y-1">
                                 {% for p in v.localized_parents %}
-                                    <div class="truncate"><strong class="text-slate-300">{{ p.name }}</strong> <span class="text-slate-500">({{ p.title }})</span></div>
+                                    <div class="truncate">
+                                        <strong class="text-slate-300">{{ p.name }}</strong> 
+                                        <span class="text-slate-500">(Card ID {{ p.card_id }}{% if p.is_rental and p.owner_viewer_id != 0 %} (Rental){% endif %})</span>
+                                    </div>
                                 {% endfor %}
                             </div>
                         </div>
