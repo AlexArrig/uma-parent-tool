@@ -180,7 +180,7 @@ def index():
                 v_main_white_set.add(f["name"])
         for p in parents:
             for pf in p.get("factors", []):
-                if pf.get("category"] == "white":
+                if pf.get("category") == "white":
                     v_white_set.add(pf["name"])
                     
         v["white_skill_set"] = v_white_set
