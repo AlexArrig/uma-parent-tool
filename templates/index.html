@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uma Parent Tool & Roster Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Fancier Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(147, 51, 234, 0.4);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(147, 51, 234, 0.8);
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
 
@@ -128,7 +145,7 @@
                             <!-- Factors / Skills Summary -->
                             <div class="space-y-2 mt-4 text-xs">
                                 <h4 class="font-semibold text-slate-400 uppercase tracking-wider text-[10px]">Factors Highlight</h4>
-                                <div class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1">
+                                <div class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1.5 custom-scrollbar">
                                     {% for f in v.localized_factors %}
                                         <span class="px-2 py-0.5 rounded-md border text-[11px] 
                                             {% if f.category == 'blue' %} bg-blue-950/40 border-blue-800 text-blue-300 
@@ -302,7 +319,7 @@
                                             <strong class="text-purple-400 text-sm">{{ ext.chara_name }}</strong>
                                             <span class="text-slate-500">({{ ext.chara_title }})</span>
                                         </div>
-                                        <div class="flex flex-wrap gap-1 mt-1">
+                                        <div class="flex flex-wrap gap-1 mt-1 max-h-20 overflow-y-auto pr-1.5 custom-scrollbar">
                                             {% for f in ext.rental_factors %}
                                                 {% if f.category in ['blue', 'pink'] %}
                                                     <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
@@ -322,7 +339,7 @@
                                             <strong class="text-purple-400 text-sm">{{ ext.best_veteran.display_name }}</strong>
                                             <span class="text-slate-500">({{ ext.best_veteran.rank_score }} Rank)</span>
                                         </div>
-                                        <div class="flex flex-wrap gap-1 mt-1">
+                                        <div class="flex flex-wrap gap-1 mt-1 max-h-20 overflow-y-auto pr-1.5 custom-scrollbar">
                                             {% for f in ext.best_veteran.localized_factors %}
                                                 {% if f.category in ['blue', 'pink'] %}
                                                     <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
