@@ -201,15 +201,23 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-1">Pair Sorting Priority:</label>
-                        <div class="flex items-center gap-4 pt-2">
-                            <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
-                                <input type="radio" name="pair_sort" value="main_total" {% if pair_sort != 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Main then Unique
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Pair Sorting Strategy:</label>
+                        <div class="grid grid-cols-2 gap-2 pt-1">
+                            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                                <input type="radio" name="pair_sort" value="main" {% if pair_sort == 'main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                                Main White Skills
                             </label>
-                            <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                                <input type="radio" name="pair_sort" value="total" {% if pair_sort == 'total' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                                Total White (Main + Parents)
+                            </label>
+                            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                                <input type="radio" name="pair_sort" value="main_total" {% if pair_sort == 'main_total' or not pair_sort %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
+                                Main then Total
+                            </label>
+                            <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
                                 <input type="radio" name="pair_sort" value="total_main" {% if pair_sort == 'total_main' %}checked{% endif %} class="text-purple-600 focus:ring-purple-500 bg-slate-800 border-slate-700">
-                                Unique then Main
+                                Total then Main
                             </label>
                         </div>
                     </div>
@@ -240,9 +248,9 @@
                                     <!-- Header Badges -->
                                     <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
                                         <span class="bg-purple-950 border border-purple-800 text-purple-300 font-bold text-xs px-2.5 py-1 rounded-full">
-                                            {{ pair.unique_white_count }} Unique Whites
+                                            Total Unique: {{ pair.unique_white_count }}
                                         </span>
-                                        <span class="text-xs text-slate-400">Main overlap: {{ pair.main_white_count }}</span>
+                                        <span class="text-xs text-slate-400">Main: <strong class="text-slate-200">{{ pair.main_white_count }}</strong></span>
                                     </div>
 
                                     <!-- Parent 1 -->
@@ -252,7 +260,7 @@
                                             <strong class="text-purple-400 text-sm">{{ pair.parent1.display_name }}</strong>
                                             <span class="text-slate-500">({{ pair.parent1.rank_score }} Rank)</span>
                                         </div>
-                                        <div class="flex flex-wrap gap-1 mt-1">
+                                        <div class="flex flex-wrap gap-1 mt-1 max-h-20 overflow-y-auto pr-1.5 custom-scrollbar">
                                             {% for f in pair.parent1.localized_factors %}
                                                 {% if f.category in ['blue', 'pink'] %}
                                                     <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
@@ -271,7 +279,7 @@
                                             <strong class="text-purple-400 text-sm">{{ pair.parent2.display_name }}</strong>
                                             <span class="text-slate-500">({{ pair.parent2.rank_score }} Rank)</span>
                                         </div>
-                                        <div class="flex flex-wrap gap-1 mt-1">
+                                        <div class="flex flex-wrap gap-1 mt-1 max-h-20 overflow-y-auto pr-1.5 custom-scrollbar">
                                             {% for f in pair.parent2.localized_factors %}
                                                 {% if f.category in ['blue', 'pink'] %}
                                                     <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
